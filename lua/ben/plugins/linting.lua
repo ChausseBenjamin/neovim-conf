@@ -7,7 +7,7 @@ return {
       css = { "stylelint" },
       markdown = { "markdownlint" },
       python = { "pylint" },
-      go = { "golangci_lint" },
+      -- go = { "golangci_lint" },
       sh = { "shellcheck" },
     }
 

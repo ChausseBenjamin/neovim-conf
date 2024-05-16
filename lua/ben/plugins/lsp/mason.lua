@@ -24,49 +24,16 @@ return {
     })
     mason_lspconfig.setup({
       -- list of servers for mason to install
-      ensure_installed = {
-        "bashls",
-        "cssls",
-        "diagnosticls",
-        "dockerls",
-        "docker_compose_language_service",
-        "gopls",
-        "lua_ls",
-        "texlab",
-        "zk",
-        "pyright",
-        "r_language_server",
-        "sqls",
-      },
+      ensure_installed = {},
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
     })
 
     mason_tool_installer.setup({
       ensure_installed = {
-        "mutt-language-server",
-        "emmet-ls",
-        -- Linters:
-        "prettier",
-        "bibtex-tidy",
-        "goimports",
-        "gci",
-        "golines",
-        "shfmt",
-        "latexindent",
-        "sql-formatter",
-        "isort",
-        "black",
-        "yamlfix",
-        "stylua",
-        -- Formatters:
-        "stylelint",
-        "markdownlint",
-        "pylint",
         "golangci-lint",
         "shellcheck",
       },
     })
-
   end,
 }

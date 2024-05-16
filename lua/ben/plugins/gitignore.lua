@@ -1,18 +1,7 @@
 return {
-	"theniceboy/fzf-gitignore",
+	"antonk52/gitignore-grabber.nvim",
 	dependencies = {
-		{
-			"junegunn/fzf",
-			build = function()
-				vim.fn["fzf#install"]()
-			end,
-		},
+		{ "nvim-telescope/telescope.nvim" },
 	},
-	cond = function()
-		return vim.fn.executable("python3") == 1
-	end,
-	build = function()
-		vim.cmd([[UpdateRemotePlugins]])
-	end,
-	ft = "gitignore",
+  cmd = "Gitignore",
 }
