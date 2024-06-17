@@ -15,7 +15,7 @@ return {
     -- Setup orgmode
     require('orgmode').setup({
       -- win_split_mode = {'float', 0.9},
-      win_split_mode = 'float',
+      -- win_split_mode = 'float',
       org_agenda_files = '~/Dropbox/org/**/*',
       org_default_notes_file = '~/Dropbox/org/index.org',
       calendar_week_start_day = 0,
