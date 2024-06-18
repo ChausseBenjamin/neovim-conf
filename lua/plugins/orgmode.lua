@@ -3,8 +3,13 @@ return {
   dependencies = {
     { -- Nicely formatted bullet Headings
       "akinsho/org-bullets.nvim",
-      dependencies = "nvim-treesitter/nvim-treesitter",
+      dependencies = {
+        "nvim-treesitter/nvim-treesitter",
+    },
       config = true,
+    },
+    {
+      "dhruvasagar/vim-table-mode",
     },
   },
   event = 'VeryLazy',
