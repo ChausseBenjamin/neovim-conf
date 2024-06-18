@@ -6,27 +6,28 @@ return {
     "nvim-telescope/telescope.nvim"
   },
   config = function()
+
+    -- Cd to git root on startup to retain harpoons wherever vim starts
+    local  function is_git_repo()
+      local git_dir = vim.fn.systemlist("git rev-parse --show-toplevel")
+      if vim.v.shell_error ~= 0 then
+          return false
+      end
+      return git_dir[1]
+    end
+
+    local function cd_to_git_root()
+      local git_root = is_git_repo()
+      if git_root then
+        vim.cmd('tcd ' .. git_root)
+      end
+    end
+
+    cd_to_git_root()
+
     local harpoon = require("harpoon")
 
     harpoon:setup()
-
-    -- -- basic telescope config
-    -- local conf = require("telescope.config").values
-    -- local function toggle_telescope(harpoon_files)
-    --   local file_paths = {}
-    --   for _, item in ipairs(harpoon_files.items) do
-    --     table.insert(file_paths, item.value)
-    --   end
-
-    --   require("telescope.pickers").new({}, {
-    --     prompt_title = "Harpoon",
-    --     finder = require("telescope.finders").new_table({
-    --       results = file_paths,
-    --     }),
-    --     previewer = conf.file_previewer({}),
-    --     sorter = conf.generic_sorter({}),
-    --   }):find()
-    -- end
 
     -- harpoon keybindings
     vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end )
