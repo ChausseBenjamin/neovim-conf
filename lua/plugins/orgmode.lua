@@ -5,14 +5,26 @@ return {
       "akinsho/org-bullets.nvim",
       dependencies = {
         "nvim-treesitter/nvim-treesitter",
-    },
-      config = true,
-    },
-    {
+      },
+      config = function()
+        local bullets = require('org-bullets')
+        bullets.setup {
+          symbols = {
+            -- list items
+           list = "",
+           checkboxes = {
+             done = { "", "OrgDone" }, -- or 
+             todo = { "", "OrgTodo" }, -- or 
+             half = { "", "OrgHalf" }, -- or 
+            },
+          },
+        }
+      end,
+    }, { -- Format tables easily
       "dhruvasagar/vim-table-mode",
     },
   },
-  event = 'VeryLazy',
+  event = { "BufEnter", "BufNewFile" },
   ft = { 'org' },
   config = function()
     -- This is bound to org-modern:
