@@ -3,40 +3,71 @@ return {
 	dependencies = "nvim-tree/nvim-web-devicons",
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
+		-- See :help statusline for more information
+		local filepath = "%=%m %f"
+		-- Map to shorten mode names
+		local modes = {
+			["NORMAL"] = "N",
+			["INSERT"] = "I",
+			["VISUAL"] = "V",
+			["V-LINE"] = "VL",
+			["V-BLOCK"] = "VB",
+			["REPLACE"] = "R",
+			["COMMAND"] = "C",
+			["EX"] = "EX",
+			["MORE"] = "M",
+			["CONFIRM"] = "CF",
+			["TERMINAL"] = "T",
+		}
+
 		require("lualine").setup({
 			options = {
-				theme = "no-clown-fiesta",
+				theme = "auto",
 				icons_enabled = true,
 				section_separators = { left = "", right = "" },
 				component_separators = { left = "", right = "" },
-				globalstatus = false,
+				globalstatus = true,
 				ignore_focus = {},
-				always_divide_middle = true,
+				always_divide_middle = false,
 				refresh = {
 					statusline = 500,
 					tabline = 500,
-					winbar = 500,
+					winbar = 0,
 				},
 			},
 			sections = {
-				lualine_a = { "mode" },
+				lualine_a = {
+					{
+						"mode",
+						fmt = function(str)
+							return modes[str]
+						end,
+					},
+				},
 				lualine_b = { "branch" },
-				lualine_c = { "filename" },
-				lualine_x = { "filetype" },
-				lualine_y = { "progress" },
+				lualine_c = { filepath },
+				lualine_x = {},
+				lualine_y = { "filetype" },
 				lualine_z = { "location" },
 			},
 			inactive_sections = {
-				lualine_a = {},
+				lualine_a = { filepath },
 				lualine_b = {},
-				lualine_c = { "filename" },
-				lualine_x = { "location" },
+				lualine_c = {},
+				lualine_x = {},
 				lualine_y = {},
-				lualine_z = {},
+				lualine_z = { "location" },
 			},
-			tabline = {},
+			tabline = {
+				lualine_a = { "getcwd" },
+				lualine_b = { "branch" },
+				lualine_c = { "diff" },
+				lualine_x = {},
+				lualine_y = {},
+				lualine_z = { "tabs" },
+			},
 			winbar = {},
-			extensions = { "fugitive" },
+			extensions = { "fugitive", "quickfix" },
 		})
 		-- Remove duplicate information that clutters the bottom of the screen
 		-- "-- INSERT --" on the left:
@@ -45,5 +76,7 @@ return {
 		vim.opt.ruler = false
 		-- commands on the right:
 		vim.opt.showcmd = false
+		-- only show tabline when there is more than one tab
+		vim.opt.showtabline = 1
 	end,
 }

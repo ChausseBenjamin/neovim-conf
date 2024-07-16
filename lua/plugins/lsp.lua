@@ -199,7 +199,10 @@ return {
 			-- Define your formatters
 			formatters_by_ft = {
 				lua = { "stylua" },
+				javascript = { "prettierd" },
+				php = { "pretty-php" },
 				go = { "gofumpt", "gci", "goimports" },
+				yaml = { "yamlfix" },
 			},
 			-- Set up format-on-save
 			format_on_save = { timeout_ms = 500, lsp_format = "fallback" },
@@ -214,5 +217,13 @@ return {
 			-- If you want the formatexpr, here is the place to set it
 			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 		end,
+	},
+	{
+		"zapling/mason-conform.nvim",
+		dependencies = {
+			"williamboman/mason.nvim",
+			"stevearc/conform.nvim",
+		},
+		config = true,
 	},
 }

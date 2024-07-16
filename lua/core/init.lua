@@ -5,7 +5,6 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.ruler = true
 vim.opt.lazyredraw = true
-vim.opt.laststatus = 0
 vim.opt.showmode = false
 vim.opt.splitbelow = true
 vim.opt.splitright = true
