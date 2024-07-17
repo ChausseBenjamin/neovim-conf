@@ -1,6 +1,8 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	dependencies = "nvim-tree/nvim-web-devicons",
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+	},
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		-- See :help statusline for more information
@@ -76,7 +78,5 @@ return {
 		vim.opt.ruler = false
 		-- commands on the right:
 		vim.opt.showcmd = false
-		-- only show tabline when there is more than one tab
-		vim.opt.showtabline = 1
 	end,
 }
