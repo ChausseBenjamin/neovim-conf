@@ -44,6 +44,24 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	end,
 })
 
+-- Auto cd to git root of project (good for harpoon)
+local function is_git_repo()
+	local git_dir = vim.fn.systemlist("git rev-parse --show-toplevel")
+	if vim.v.shell_error ~= 0 then
+		return false
+	end
+	return git_dir[1]
+end
+
+local function cd_to_git_root()
+	local git_root = is_git_repo()
+	if git_root then
+		vim.cmd("tcd " .. git_root)
+	end
+end
+
+cd_to_git_root()
+
 -- Quickly compile and preview files
 vim.keymap.set("n", "<leader>c", "<cmd>make<cr>")
 vim.keymap.set("n", "<leader>o", "<cmd>!opout %<cr>")

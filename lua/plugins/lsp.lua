@@ -1,9 +1,14 @@
 return {
 	{
-		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
 		dependencies = {
-			"williamboman/mason-lspconfig.nvim",
+			"williamboman/mason.nvim",
 		},
+		event = { "BufReadPre", "BufNewFile" },
+	},
+	{
+		"williamboman/mason.nvim",
+		cmd = "Mason",
 		config = function()
 			local mason = require("mason")
 			local mlsp = require("mason-lspconfig")
@@ -40,23 +45,24 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-		veryLazy = true,
+		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"hrsh7th/nvim-cmp",
 			"hrsh7th/cmp-nvim-lsp",
 			"nvim-telescope/telescope.nvim",
 		},
 		config = function()
-			-- Use icons in the sidebar
-			local signs = { Error = "", Warn = "", Hint = "󰈈", Info = "" }
-			for type, icon in pairs(signs) do
-				local hl = "DiagnosticSign" .. type
-				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-			end
 			-- Hide inline virtual text and use only the icons for debbuging/tips
 			vim.diagnostic.config({
 				virtual_text = false,
-				signs = true,
+				signs = {
+					text = {
+						[vim.diagnostic.severity.ERROR] = "",
+						[vim.diagnostic.severity.WARN] = "",
+						[vim.diagnostic.severity.HINT] = "󰈈",
+						[vim.diagnostic.severity.INFO] = "",
+					},
+				},
 				underline = true,
 			})
 
@@ -220,6 +226,7 @@ return {
 	},
 	{
 		"zapling/mason-conform.nvim",
+		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"williamboman/mason.nvim",
 			"stevearc/conform.nvim",

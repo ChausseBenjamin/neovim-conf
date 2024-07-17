@@ -5,59 +5,79 @@ return {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",
 	},
-	config = function()
-		-- Cd to git root on startup to retain harpoons wherever vim starts
-		local function is_git_repo()
-			local git_dir = vim.fn.systemlist("git rev-parse --show-toplevel")
-			if vim.v.shell_error ~= 0 then
-				return false
-			end
-			return git_dir[1]
-		end
-
-		local function cd_to_git_root()
-			local git_root = is_git_repo()
-			if git_root then
-				vim.cmd("tcd " .. git_root)
-			end
-		end
-
-		cd_to_git_root()
-
-		local harpoon = require("harpoon")
-
-		harpoon:setup()
-
-		-- harpoon keybindings
-		vim.keymap.set("n", "<leader>a", function()
-			harpoon:list():add()
-		end)
-		-- vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end, {desc = "Open harpoon window"} )
-		vim.keymap.set("n", "<C-e>", function()
-			harpoon.ui:toggle_quick_menu(harpoon:list())
-		end)
-
-		vim.keymap.set("n", "<C-h>", function()
-			harpoon:list():select(1)
-		end)
-		vim.keymap.set("n", "<C-j>", function()
-			harpoon:list():select(2)
-		end)
-		vim.keymap.set("n", "<C-k>", function()
-			harpoon:list():select(3)
-		end)
-		vim.keymap.set("n", "<C-l>", function()
-			harpoon:list():select(4)
-		end)
-		vim.keymap.set("n", "<C-;>", function()
-			harpoon:list():select(5)
-		end)
-
-		vim.keymap.set("n", "<C-S-P>", function()
-			harpoon:list():prev()
-		end)
-		vim.keymap.set("n", "<C-S-N>", function()
-			harpoon:list():next()
-		end)
-	end,
+	opts = {},
+	keys = {
+		{ -- Add Harpoon
+			"<leader>a",
+			function()
+				require("harpoon"):list():add()
+			end,
+			mode = "n",
+			desc = "Add Harpoon",
+		},
+		{ -- Edit Harpoons
+			"<C-e>",
+			function()
+				require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
+			end,
+			mode = "n",
+			desc = "Edit Harpoons",
+		},
+		{ -- Select Harpoon 1
+			"<C-h>",
+			function()
+				require("harpoon"):list():select(1)
+			end,
+			mode = "n",
+			desc = "Select Harpoon 1",
+		},
+		{ -- Select Harpoon 2
+			"<C-j>",
+			function()
+				require("harpoon"):list():select(2)
+			end,
+			mode = "n",
+			desc = "Select Harpoon 2",
+		},
+		{ -- Select Harpoon 3
+			"<C-k>",
+			function()
+				require("harpoon"):list():select(3)
+			end,
+			mode = "n",
+			desc = "Select Harpoon 3",
+		},
+		{ -- Select Harpoon 4
+			"<C-l>",
+			function()
+				require("harpoon"):list():select(4)
+			end,
+			mode = "n",
+			desc = "Select Harpoon 4",
+		},
+		{ -- Select Harpoon 5
+			"<C-;>",
+			function()
+				require("harpoon"):list():select(5)
+			end,
+			mode = "n",
+			desc = "Select Harpoon 5",
+		},
+		{ -- Select Previous Harpoon
+			"<C-S-P>",
+			function()
+				require("harpoon"):list():prev()
+			end,
+			mode = "n",
+			desc = "Select Previous Harpoon",
+		},
+		{ -- Select Next Harpoon
+			"<C-S-N>",
+			function()
+				require("harpoon"):list():next()
+			end,
+			mode = "n",
+			desc = "Select Next Harpoon",
+		},
+	},
 }
