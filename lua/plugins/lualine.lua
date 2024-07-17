@@ -60,8 +60,8 @@ return {
 			},
 			tabline = {
 				lualine_a = { "getcwd" },
-				lualine_b = { "branch" },
-				lualine_c = { "diff" },
+				lualine_b = { "diff" },
+				lualine_c = { "orgmode.statusline()" },
 				lualine_x = {},
 				lualine_y = {},
 				lualine_z = { "tabs" },
