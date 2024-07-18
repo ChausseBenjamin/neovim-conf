@@ -71,4 +71,4 @@ vim.keymap.set("n", "S", "<nop>")
 vim.keymap.set("n", "<leader>w", "<C-w>")
 -- Quickly navigate between Tabs
 vim.keymap.set("n", "<Bslash>", "<cmd>tabnext<cr>")
-vim.keymap.set("n", "<Bar>", "<cmd>tabnew<cr>")
+vim.keymap.set("n", "<C-\\>", "<cmd>tabnew<cr>")

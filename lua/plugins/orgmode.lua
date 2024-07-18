@@ -37,6 +37,7 @@ return {
 			org_agenda_files = "~/Dropbox/org/**/*",
 			org_default_notes_file = "~/Dropbox/org/index.org",
 			calendar_week_start_day = 0,
+			org_tags_column = 100,
 			emacs_config = {
 				-- executable_path = '/opt/homebrew/bin/emacs',
 				config_path = "$HOME/.config/emacs/early-init.el",
