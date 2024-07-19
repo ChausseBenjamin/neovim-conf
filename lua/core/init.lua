@@ -63,8 +63,8 @@ end
 cd_to_git_root()
 
 -- Quickly compile and preview files
-vim.keymap.set("n", "<leader>c", "<cmd>make<cr>")
-vim.keymap.set("n", "<leader>o", "<cmd>!opout %<cr>")
+vim.keymap.set("n", "<leader>pc", "<cmd>make<cr>") -- P.roject C.ompile
+vim.keymap.set("n", "<leader>pp", "<cmd>!opout %<cr>") -- P.roject P.review
 -- Make sure I don't accidentally delete with 'S' when not using an LSP:
 vim.keymap.set("n", "S", "<nop>")
 -- Stop hurting my pinky with <C-w>:
@@ -72,3 +72,10 @@ vim.keymap.set("n", "<leader>w", "<C-w>")
 -- Quickly navigate between Tabs
 vim.keymap.set("n", "<Bslash>", "<cmd>tabnext<cr>")
 vim.keymap.set("n", "<C-\\>", "<cmd>tabnew<cr>")
+
+-- TEST
+-- vim.api.nvim_create_autocmd("InsertLeave", {
+-- 	callback = function()
+-- 		print("hello")
+-- 	end,
+-- })
