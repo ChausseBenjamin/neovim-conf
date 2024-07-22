@@ -2,10 +2,16 @@ return {
 	"theprimeagen/harpoon",
 	branch = "harpoon2",
 	dependencies = {
-		"nvim-lua/plenary.nvim",
-		"nvim-telescope/telescope.nvim",
+		{ "nvim-lua/plenary.nvim" },
+		{ "nvim-telescope/telescope.nvim" },
+		{ "mike-jl/harpoonEx", opts = { reload_on_dir_change = true } },
 	},
-	opts = {},
+	config = function()
+		local hp = require("harpoon")
+		local hpx = require("harpoonEx")
+		hp:extend(hpx.extend())
+		hp.setup({})
+	end,
 	keys = {
 		{ -- Add Harpoon
 			"<leader>a",
