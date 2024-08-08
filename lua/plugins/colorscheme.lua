@@ -1,49 +1,48 @@
 return {
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		config = function()
+			local configs = require("nvim-treesitter.configs")
+			---@diagnostic disable-next-line: missing-fields
+			configs.setup({
+				-- List of languages in-> :h
+				ensure_installed = {
+					"c",
+					"go",
+					"bash",
+					"lua",
+					"python",
+					"vim",
+					"vimdoc",
+					"gitignore",
+					"mermaid",
+					"markdown",
+					"rnoweb",
+					"r",
+					"rust",
+					"dockerfile",
+					"graphql",
+					"yaml",
+					"json",
+					"xml",
+					"sxhkdrc",
+					"zathurarc",
+				},
+				ignore_install = {
+					"javascript",
+					"typescript",
+				},
+				sync_install = false,
+				highlight = { enable = true },
+				indent = { enable = false },
+				additional_vim_regex_highlighting = false,
+			})
+		end,
+	},
 	{ -- No nonsense, very stoic
 		"aktersnurra/no-clown-fiesta.nvim",
-		dependencies = {
-			{
-				"nvim-treesitter/nvim-treesitter",
-				build = ":TSUpdate",
-				config = function()
-					local configs = require("nvim-treesitter.configs")
-					---@diagnostic disable-next-line: missing-fields
-					configs.setup({
-						-- List of languages in-> :h
-						ensure_installed = {
-							"c",
-							"go",
-							"bash",
-							"lua",
-							"python",
-							"vim",
-							"vimdoc",
-							"gitignore",
-							"mermaid",
-							"markdown",
-							"rnoweb",
-							"r",
-							"rust",
-							"dockerfile",
-							"graphql",
-							"yaml",
-							"json",
-							"xml",
-							"sxhkdrc",
-							"zathurarc",
-						},
-						ignore_install = {
-							"javascript",
-							"typescript",
-						},
-						sync_install = false,
-						highlight = { enable = true },
-						indent = { enable = false },
-						additional_vim_regex_highlighting = false,
-					})
-				end,
-			},
-		},
+		dependencies = "nvim-treesitter/nvim-treesitter",
 		lazy = false,
 		priority = 1000,
 		config = function()
