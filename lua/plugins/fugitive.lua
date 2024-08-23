@@ -15,6 +15,8 @@ return {
 			{ "<leader>ds", "<cmd>Gvdiffsplit!<CR>" }, -- G.it D.iff S.plit
 			{ "<leader>dh", "<cmd>diffget //2 | diffupdate<CR>" },
 			{ "<leader>dl", "<cmd>diffget //3 | diffupdate<CR>" },
+			{ "<leader>de", "<cmd>only<CR>" }, -- D.iff E.xit
+			-- NOTE: dp (no leader) is already set to diffput | diffupdate by default
 		},
 	},
 	{
