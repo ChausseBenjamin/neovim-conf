@@ -23,7 +23,7 @@ vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {}) -- terminal mode Esc
 vim.keymap.set("v", "<s-j>", ":m '>+1<cr>gv=gv")
 vim.keymap.set("v", "<s-k>", ":m '<-2<cr>gv=gv")
 
--- Netrw preferences when not using lf
+-- Netrw preferences
 vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
 vim.g.netrw_bufsettings = "noma nomod nu nobl nowrap ro"
@@ -65,8 +65,11 @@ end
 cd_to_git_root()
 
 -- Quickly compile and preview files
-vim.keymap.set("n", "<leader>pc", "<cmd>make<cr>") -- P.roject C.ompile
-vim.keymap.set("n", "<leader>pp", "<cmd>!opout %<cr>") -- P.roject P.review
+vim.keymap.set("n", "<leader>mm", "<cmd>make<cr>") -- M.ake
+vim.keymap.set("n", "<leader>ma", "<cmd>make<cr>") -- M.ake A.ll
+vim.keymap.set("n", "<leader>mc", "<cmd>make<cr>") -- M.ake C.lean
+vim.keymap.set("n", "<leader>mo", "<cmd>!opout %<cr>") -- M.ake O.pen
+
 -- Make sure I don't accidentally delete with 'S' when not using an LSP:
 vim.keymap.set("n", "S", "<nop>")
 -- Stop hurting my pinky with <C-w>:
@@ -74,10 +77,3 @@ vim.keymap.set("n", "<leader>w", "<C-w>")
 -- Quickly navigate between Tabs
 vim.keymap.set("n", "<Bslash>", "<cmd>tabnext<cr>")
 vim.keymap.set("n", "<C-\\>", "<cmd>tabnew<cr>")
-
--- TEST
--- vim.api.nvim_create_autocmd("InsertLeave", {
--- 	callback = function()
--- 		print("hello")
--- 	end,
--- })

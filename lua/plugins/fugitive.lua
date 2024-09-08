@@ -13,8 +13,10 @@ return {
 			{ "<leader>gp", "<cmd>G pull<CR>" }, -- G.it P.ull
 			{ "<leader>gf", "<cmd>G fetch<CR>" }, -- G.it F.etch
 			{ "<leader>ds", "<cmd>Gvdiffsplit!<CR>" }, -- G.it D.iff S.plit
-			{ "<leader>dh", "<cmd>diffget //2<CR>" },
-			{ "<leader>dl", "<cmd>diffget //3<CR>" },
+			{ "<leader>dh", "<cmd>diffget //2 | diffupdate<CR>" },
+			{ "<leader>dl", "<cmd>diffget //3 | diffupdate<CR>" },
+			{ "<leader>de", "<cmd>only<CR>" }, -- D.iff E.xit
+			-- NOTE: dp (no leader) is already set to diffput | diffupdate by default
 		},
 	},
 	{
