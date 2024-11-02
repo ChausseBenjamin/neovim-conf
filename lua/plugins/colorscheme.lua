@@ -18,6 +18,7 @@ return {
 					"gitignore",
 					"mermaid",
 					"markdown",
+					"markdown_inline",
 					"rnoweb",
 					"r",
 					"rust",

@@ -3,12 +3,10 @@ return {
 	branch = "0.1.x",
 	dependencies = {
 		{ "nvim-lua/plenary.nvim" },
-		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		{ "stevearc/dressing.nvim" },
 	},
 	config = function()
 		local telescope = require("telescope")
-		telescope.load_extension("fzf")
 	end,
 	keys = {
 		-- P.aruse F.iles
