@@ -47,7 +47,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 -- Auto cd to git root of project (good for harpoon)
-local function is_git_repo()
+function Is_git_repo()
 	local git_dir = vim.fn.systemlist("git rev-parse --show-toplevel")
 	if vim.v.shell_error ~= 0 then
 		return false
@@ -56,7 +56,7 @@ local function is_git_repo()
 end
 
 local function cd_to_git_root()
-	local git_root = is_git_repo()
+	local git_root = Is_git_repo()
 	if git_root then
 		vim.cmd("tcd " .. git_root)
 	end
