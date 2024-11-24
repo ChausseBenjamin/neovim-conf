@@ -28,6 +28,7 @@ return {
 					"json",
 					"xml",
 					"sxhkdrc",
+					"vhs",
 					"zathurarc",
 				},
 				ignore_install = {

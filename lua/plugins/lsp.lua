@@ -36,6 +36,7 @@ return {
 				"ruff_lsp",
 				"docker_compose_language_service",
 				"rust_analyzer",
+				"zls",
 			}
 			mlsp.setup({
 				ensure_installed = myServers,
@@ -147,6 +148,7 @@ return {
 				"ruff_lsp",
 				"clangd",
 				"marksman",
+				"zls",
 			}
 			for _, server in ipairs(myServers) do
 				lsp[server].setup({
