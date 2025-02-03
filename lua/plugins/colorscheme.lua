@@ -72,6 +72,9 @@ return {
 			-- vim.api.nvim_set_hl(0,"MasonNormal",{bg=fullbg})
 			vim.api.nvim_set_hl(0, "NormalFloat", { bg = fullbg })
 			vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = fullbg })
+
+			vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#84493b" })
+			vim.fn.matchadd("ColorColumn", "\\%81v", 100)
 		end,
 	},
 	{
@@ -84,6 +87,11 @@ return {
 				transparent_background_level = 2,
 			})
 		end,
+	},
+	{
+		"dundargoc/fakedonalds.nvim",
+		version = false,
+		priority = 1000,
 	},
 	{
 		"ChausseBenjamin/friffle-vim",
