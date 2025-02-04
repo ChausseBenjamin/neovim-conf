@@ -218,6 +218,7 @@ return {
 				lua = { "stylua" },
 				javascript = { "prettierd" },
 				php = { "pretty-php" },
+				-- go = { "gofumpt" },
 				go = { "gofumpt", "gci", "goimports" },
 				yaml = { "yamlfix" },
 				graphql = { "prettierd" },

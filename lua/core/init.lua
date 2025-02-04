@@ -19,10 +19,6 @@ vim.opt.spelllang = "fr" -- why does french exist...
 vim.api.nvim_set_keymap("n", "Y", "y$", {}) -- What should have been `Y`
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {}) -- terminal mode Esc
 
--- TODO: turn this into a plugin? (count + single undo)
-vim.keymap.set("v", "<s-j>", ":m '>+1<cr>gv=gv")
-vim.keymap.set("v", "<s-k>", ":m '<-2<cr>gv=gv")
-
 -- Netrw preferences
 vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
