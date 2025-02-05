@@ -7,13 +7,14 @@ return {
 	},
 	config = function()
 		local telescope = require("telescope")
-		local actions = require("telescope.actions")
 	end,
 	keys = {
 		-- P.aruse F.iles
 		{ "<leader>pv", '<cmd>lua require("telescope.builtin").find_files()<cr>' },
 		-- P.aruse B.uffers
 		{ "<leader>pb", '<cmd>lua require("telescope.builtin").buffers()<cr>' },
+		-- P.aruse D.iagnostics
+		{ "<leader>pd", '<cmd>lua require("telescope.builtin").diagnostics()<cr>' },
 		-- P.aruse with G.rep
 		{ "<leader>pg", '<cmd>lua require("telescope.builtin").live_grep()<cr>' },
 		-- P.roject S.earch
@@ -24,8 +25,6 @@ return {
 		{ "<C-p>", '<cmd>lua require("telescope.builtin").git_files()<cr>' },
 		-- F.ind B.ranch
 		{ "<leader>fb", '<cmd>lua require("telescope.builtin").grep_branches()<cr>' },
-		-- F.ix L.ist
-		{ "<leader>fl", "<cmd>Telescope diagnostics<cr>" },
 		-- F.ind R.eferences
 		{ "<leader>fr", "<cmd>Telescope lsp_references<cr>" },
 	},

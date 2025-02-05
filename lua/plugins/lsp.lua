@@ -34,6 +34,7 @@ return {
 				"marksman",
 				"dockerls",
 				"ruff_lsp",
+				"basedpyright",
 				"docker_compose_language_service",
 				"rust_analyzer",
 			}
@@ -145,6 +146,7 @@ return {
 				"graphql",
 				"texlab",
 				"ruff_lsp",
+				"basedpyright",
 				"clangd",
 				"marksman",
 			}
@@ -199,7 +201,7 @@ return {
 		keys = {
 			{
 				-- Customize or remove this keymap to your liking
-				"<leader>f",
+				"<leader>ff",
 				function()
 					require("conform").format({ async = true, lsp_format = "fallback" })
 				end,
