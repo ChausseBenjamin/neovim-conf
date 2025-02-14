@@ -19,10 +19,6 @@ vim.opt.spelllang = "fr" -- why does french exist...
 vim.api.nvim_set_keymap("n", "Y", "y$", {}) -- What should have been `Y`
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {}) -- terminal mode Esc
 
--- TODO: turn this into a plugin? (count + single undo)
-vim.keymap.set("v", "<s-j>", ":m '>+1<cr>gv=gv")
-vim.keymap.set("v", "<s-k>", ":m '<-2<cr>gv=gv")
-
 -- Netrw preferences
 vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
@@ -47,7 +43,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 -- Auto cd to git root of project (good for harpoon)
-local function is_git_repo()
+function Is_git_repo()
 	local git_dir = vim.fn.systemlist("git rev-parse --show-toplevel")
 	if vim.v.shell_error ~= 0 then
 		return false
@@ -56,7 +52,7 @@ local function is_git_repo()
 end
 
 local function cd_to_git_root()
-	local git_root = is_git_repo()
+	local git_root = Is_git_repo()
 	if git_root then
 		vim.cmd("tcd " .. git_root)
 	end
@@ -77,3 +73,4 @@ vim.keymap.set("n", "<leader>w", "<C-w>")
 -- Quickly navigate between Tabs
 vim.keymap.set("n", "<Bslash>", "<cmd>tabnext<cr>")
 vim.keymap.set("n", "<C-\\>", "<cmd>tabnew<cr>")
+vim.opt.conceallevel = 2

@@ -33,10 +33,11 @@ return {
 				"clangd",
 				"marksman",
 				"dockerls",
-				"ruff_lsp",
+				"ruff",
 				"basedpyright",
 				"docker_compose_language_service",
 				"rust_analyzer",
+				"zls",
 			}
 			mlsp.setup({
 				ensure_installed = myServers,
@@ -145,10 +146,11 @@ return {
 				"docker_compose_language_service",
 				"graphql",
 				"texlab",
-				"ruff_lsp",
+				"ruff",
 				"basedpyright",
 				"clangd",
 				"marksman",
+				"zls",
 			}
 			for _, server in ipairs(myServers) do
 				lsp[server].setup({
@@ -216,6 +218,7 @@ return {
 				lua = { "stylua" },
 				javascript = { "prettierd" },
 				php = { "pretty-php" },
+				-- go = { "gofumpt" },
 				go = { "gofumpt", "gci", "goimports" },
 				yaml = { "yamlfix" },
 				graphql = { "prettierd" },

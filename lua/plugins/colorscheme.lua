@@ -28,6 +28,8 @@ return {
 					"json",
 					"xml",
 					"sxhkdrc",
+					"zig",
+					"vhs",
 					"zathurarc",
 				},
 				ignore_install = {
@@ -74,19 +76,8 @@ return {
 		end,
 	},
 	{
-		"neanias/everforest-nvim",
-		version = false,
-		enable = false,
-		config = function()
-			require("everforest").setup({
-				background = "hard",
-				transparent_background_level = 2,
-			})
-		end,
-	},
-	{
 		"ChausseBenjamin/friffle-vim",
-		version = false,
+		version = "*",
 		priority = 1000,
 	},
 }
