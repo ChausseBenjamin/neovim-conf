@@ -13,8 +13,8 @@ return {
 		hp.setup({})
 	end,
 	keys = {
-		{ -- Add Harpoon
-			"<leader>a",
+		{ -- add H.arpoon
+			"<leader>h",
 			function()
 				require("harpoon"):list():add()
 			end,
