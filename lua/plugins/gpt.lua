@@ -25,6 +25,17 @@ return {
 				},
 				{
 					provider = "ollama",
+					name = "ChatOllamaDeepseek-R1",
+					chat = true,
+					command = false,
+					model = {
+						model = "deepseek-r1",
+						num_ctx = 8192,
+					},
+					system_prompt = "You are a general AI assistant.",
+				},
+				{
+					provider = "ollama",
 					name = "CodeOllamaDeepseekCoderV2",
 					chat = false,
 					command = true,
