@@ -28,6 +28,7 @@ return {
 					"json",
 					"xml",
 					"sxhkdrc",
+					"zig",
 					"vhs",
 					"zathurarc",
 				},
@@ -78,24 +79,8 @@ return {
 		end,
 	},
 	{
-		"neanias/everforest-nvim",
-		version = false,
-		enable = false,
-		config = function()
-			require("everforest").setup({
-				background = "hard",
-				transparent_background_level = 2,
-			})
-		end,
-	},
-	{
-		"dundargoc/fakedonalds.nvim",
-		version = false,
-		priority = 1000,
-	},
-	{
 		"ChausseBenjamin/friffle-vim",
-		version = false,
+		version = "*",
 		priority = 1000,
 	},
 }
