@@ -1,5 +1,5 @@
 return {
-	{
+	{ -- Best Git integration
 		lazy = false,
 		"tpope/vim-fugitive",
 		dependencies = "tpope/vim-rhubarb",
@@ -19,7 +19,23 @@ return {
 			-- NOTE: dp (no leader) is already set to diffput | diffupdate by default
 		},
 	},
-	{
+	{ -- Since ignoring files is part of a git workflow
+		"antonk52/gitignore-grabber.nvim",
+		dependencies = {
+			{ "nvim-telescope/telescope.nvim" },
+		},
+		cmd = "Gitignore",
+	},
+	{ -- To quickly view what has/hasn't been added/committed
+		"lewis6991/gitsigns.nvim",
+		-- Only enable if git is installed
+		cond = function()
+			return vim.fn.executable("git") == 1
+		end,
+		event = { "BufReadPre", "BufNewFile" },
+		config = true,
+	},
+	{ -- Because I use yadm for dotfiles
 		"takinoy/yadm.nvim",
 		dependencies = "tpope/vim-fugitive",
 		event = { "BufReadPre" },

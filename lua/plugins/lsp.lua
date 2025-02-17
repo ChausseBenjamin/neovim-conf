@@ -105,7 +105,7 @@ return {
 
 				vim.keymap.set(
 					"n",
-					"gr",
+					"<leader>gr",
 					vim.lsp.buf.references,
 					{ buffer = 0, desc = "Go to references of the object" }
 				)

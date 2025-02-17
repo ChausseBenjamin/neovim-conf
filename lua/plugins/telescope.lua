@@ -13,7 +13,11 @@ return {
 			-- [P]aruse [B]uffers
 			{ "<leader>pb", '<cmd>lua require("telescope.builtin").buffers()<cr>', desc = "[P]aruse [B]uffers" },
 			-- [P]aruse [D]iagnostics
-			{ "<leader>pd", '<cmd>lua require("telescope.builtin").diagnostics()<cr>', desc = "[P]aruse [D]iagnostics" },
+			{
+				"<leader>pd",
+				'<cmd>lua require("telescope.builtin").diagnostics()<cr>',
+				desc = "[P]aruse [D]iagnostics",
+			},
 			-- [P]aruse with [G]rep
 			{ "<leader>pg", '<cmd>lua require("telescope.builtin").live_grep()<cr>', desc = "[P]aruse with [G]rep" },
 			-- [P]roject [S]earch
