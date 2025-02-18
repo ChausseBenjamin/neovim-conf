@@ -15,9 +15,6 @@ return {
 				date_separator = "-",
 				time_format = 24,
 				show_seconds = false,
-				-- insert_date_map = "<leader>td", -- T.ime D.ated
-				-- insert_time_map = "<leader>tt", -- T.ime T.ime
-				-- -- insert_date_time_map = "<leader>dtt",
 			})
 		end,
 		keys = {
