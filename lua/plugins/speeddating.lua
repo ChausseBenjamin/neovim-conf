@@ -15,10 +15,37 @@ return {
 				date_separator = "-",
 				time_format = 24,
 				show_seconds = false,
-				insert_date_map = "<leader>td", -- T.ime D.ated
-				insert_time_map = "<leader>tt", -- T.ime T.ime
-				-- insert_date_time_map = "<leader>dtt",
+				-- insert_date_map = "<leader>td", -- T.ime D.ated
+				-- insert_time_map = "<leader>tt", -- T.ime T.ime
+				-- -- insert_date_time_map = "<leader>dtt",
 			})
 		end,
+		keys = {
+			{
+				"<leader>td",
+				function()
+					require("date-time-inserter").insert_date()
+				end,
+				mode = "n",
+				desc = "Insert [T]imestamp [D]ate",
+			},
+			{
+				"<leader>tt",
+				function()
+					require("date-time-inserter").insert_time()
+				end,
+				mode = "n",
+				desc = "Insert [T]imestamp [T]ime",
+			},
+			{
+				"<leader>tf",
+				function()
+					require("date-time-inserter").insert_date_time()
+				end,
+				mode = "n",
+				desc = "Insert [T]imestamp [F]ull",
+			},
+		},
+		cmd = { "InsertDate", "InsertTime", "InsertDateTime" },
 	},
 }
