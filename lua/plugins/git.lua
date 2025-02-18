@@ -28,12 +28,38 @@ return {
 	},
 	{ -- To quickly view what has/hasn't been added/committed
 		"lewis6991/gitsigns.nvim",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+		},
 		-- Only enable if git is installed
 		cond = function()
 			return vim.fn.executable("git") == 1
 		end,
 		event = { "BufReadPre", "BufNewFile" },
-		config = true,
+		config = function()
+			local gs = require("gitsigns")
+			gs.setup()
+			local ts_repeat = require("nvim-treesitter.textobjects.repeatable_move")
+			local function navopts()
+				return {
+					wrap = true,
+					foldopen = true,
+					navigation_message = true,
+					preview = false,
+					count = vim.v.count1,
+				}
+			end
+			local next_hunk, prev_hunk = ts_repeat.make_repeatable_move_pair( --
+				function()
+					gs.nav_hunk("next", navopts())
+				end,
+				function()
+					gs.nav_hunk("prev", navopts())
+				end
+			)
+			vim.keymap.set({ "n", "x", "o" }, "]h", next_hunk, { desc = "next [H]unk" })
+			vim.keymap.set({ "n", "x", "o" }, "[h", prev_hunk, { desc = "prev [H]unk" })
+		end,
 	},
 	{ -- Because I use yadm for dotfiles
 		"takinoy/yadm.nvim",
