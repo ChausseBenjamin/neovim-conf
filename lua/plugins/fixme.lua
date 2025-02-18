@@ -1,9 +1,28 @@
 return {
 	"folke/todo-comments.nvim",
 	dependencies = { "nvim-lua/plenary.nvim" },
-	opts = {
-		-- your configuration comes here
-		-- or leave it empty to use the default settings
-		-- refer to the configuration section below
+	opts = {},
+	cmd = {
+		"TodoFzfLua",
+		"TodoLocList",
+		"TodoQuickFix",
+		"TodoTelescope",
+		"TodoTrouble",
+	},
+	keys = {
+		{
+			"<leader>tq",
+			mode = "n",
+			function()
+				require("todo-comments.search").setqflist()
+			end,
+			desc = "[T]odo [Q]uickfix",
+		},
+		{
+			"<leader>tl",
+			"<cmd>Telescope todo-comments todo<cr>",
+			mode = "n",
+			desc = "[T]odo [L]ist (telescope)",
+		},
 	},
 }
