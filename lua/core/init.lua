@@ -74,3 +74,21 @@ vim.keymap.set("n", "<leader>w", "<C-w>")
 vim.keymap.set("n", "<Bslash>", "<cmd>tabnext<cr>")
 vim.keymap.set("n", "<C-\\>", "<cmd>tabnew<cr>")
 vim.opt.conceallevel = 2
+
+function DefaultLspServers()
+	return {
+		"gopls",
+		"golangci_lint_ls",
+		"lua_ls",
+		"bashls",
+		"graphql",
+		"texlab",
+		"clangd",
+		"marksman",
+		"dockerls",
+		"ruff",
+		"docker_compose_language_service",
+		"rust_analyzer",
+		"zls",
+	}
+end
