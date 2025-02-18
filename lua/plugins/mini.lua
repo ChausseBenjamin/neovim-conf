@@ -28,7 +28,7 @@ return {
 		local no_indent_anim = require("mini.indentscope").gen_animation.none
 		require("mini.indentscope").setup({
 			draw = {
-				delay = 25,
+				delay = 0,
 				animation = no_indent_anim(),
 			},
 		})
