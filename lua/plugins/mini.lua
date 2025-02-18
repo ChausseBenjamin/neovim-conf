@@ -18,7 +18,6 @@ return {
 			"splitjoin",
 			"surround",
 			"trailspace",
-			"pairs",
 		}
 		for _, pkg in ipairs(withDefaults) do
 			require("mini." .. pkg).setup()
@@ -67,6 +66,12 @@ return {
 				line_right = "",
 				line_up = "",
 				line_down = "",
+			},
+		})
+
+		require("mini.pairs").setup({
+			mappings = {
+				["`"] = false,
 			},
 		})
 	end,
