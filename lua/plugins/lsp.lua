@@ -22,7 +22,7 @@ return {
 				},
 			})
 			-- Global so it can be used by both mason and lspconfig ;)
-			local myServers = {
+			DefaultLspServers = {
 				-- LSPs:
 				"gopls",
 				"golangci_lint_ls",
@@ -39,7 +39,7 @@ return {
 				"zls",
 			}
 			mlsp.setup({
-				ensure_installed = myServers,
+				ensure_installed = DefaultLspServers,
 				automatic_installation = false,
 			})
 		end,
@@ -136,21 +136,21 @@ return {
 
 			-- Configure every lsp installed and managed by mason
 			-- TODO: automate this with a global myServers table
-			local myServers = {
-				"gopls",
-				"golangci_lint_ls",
-				"lua_ls",
-				"bashls",
-				"dockerls",
-				"docker_compose_language_service",
-				"graphql",
-				"texlab",
-				"ruff",
-				"clangd",
-				"marksman",
-				"zls",
-			}
-			for _, server in ipairs(myServers) do
+			-- local myServers = {
+			-- 	"gopls",
+			-- 	"golangci_lint_ls",
+			-- 	"lua_ls",
+			-- 	"bashls",
+			-- 	"dockerls",
+			-- 	"docker_compose_language_service",
+			-- 	"graphql",
+			-- 	"texlab",
+			-- 	"ruff",
+			-- 	"clangd",
+			-- 	"marksman",
+			-- 	"zls",
+			-- }
+			for _, server in ipairs(DefaultLspServers) do
 				lsp[server].setup({
 					capabilities = lspCaps,
 					on_attach = lspMaps,
