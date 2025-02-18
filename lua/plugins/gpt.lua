@@ -1,7 +1,10 @@
 return {
 	"robitx/gp.nvim",
 	config = function()
+		local local_user = vim.fn.getenv("USER") or "User"
 		local conf = {
+			chat_user_prefix = " " .. local_user .. ":",
+			chat_assistant_prefix = { "󰚩 ", "[{{agent}}]:" },
 			providers = {
 				openai = { disable = true },
 				googleai = { disable = true },
@@ -38,8 +41,6 @@ return {
 						.. "START AND END YOUR ANSWER WITH:\n\n```",
 				},
 			},
-			chat_assistant_prefix = { "󰚩 ", "[{{agent}}]:" },
-			chat_user_prefix = ":",
 		}
 		require("gp").setup(conf)
 	end,

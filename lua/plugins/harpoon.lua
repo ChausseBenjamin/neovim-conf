@@ -13,15 +13,15 @@ return {
 		hp.setup({})
 	end,
 	keys = {
-		{ -- Add Harpoon
-			"<leader>a",
+		{ -- add [H]arpoon
+			"<leader>h",
 			function()
 				require("harpoon"):list():add()
 			end,
 			mode = "n",
 			desc = "Add Harpoon",
 		},
-		{ -- Edit Harpoons
+		{ -- [E]dit Harpoons
 			"<C-e>",
 			function()
 				require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
@@ -29,7 +29,7 @@ return {
 			mode = "n",
 			desc = "Edit Harpoons",
 		},
-		{ -- Select Harpoon 1
+		{ -- [S]elect Harpoon 1
 			"<C-h>",
 			function()
 				require("harpoon"):list():select(1)
@@ -83,7 +83,7 @@ return {
 				require("harpoon"):list():next()
 			end,
 			mode = "n",
-			desc = "Select Next Harpoon",
+			desc = "Select [N]ext Harpoon",
 		},
 	},
 }
