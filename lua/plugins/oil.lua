@@ -3,6 +3,8 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		require("oil").setup({
+			default_file_explorer = true,
+			skip_confirm_for_simple_edits = true,
 			columns = { "icon" },
 			keymaps = {
 				["<C-h>"] = false,
@@ -14,15 +16,6 @@ return {
 		})
 	end,
 	keys = {
-
-		{ -- Floating Oil window
-			"<leader>-",
-			function()
-				require("oil").toggle_float()
-			end,
-			mode = "n",
-			desc = "Toggle floating Oil window",
-		},
 
 		{ -- Open parent directory
 			"-",
