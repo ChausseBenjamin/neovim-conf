@@ -6,19 +6,19 @@ return {
 				"<leader>ox",
 				"<cmd>ConvertColorTo hex<cr>",
 				mode = { "n", "x", "o" },
-				desc = "C[o]nvert to He[x] (ex: #001122)",
+				desc = "C[o]nvert to He[x] (ex: #66aabb)",
 			},
 			{
 				"<leader>oc",
 				"<cmd>ConvertColorTo hex_num<cr>",
 				mode = { "n", "x", "o" },
-				desc = "C[o]nvert to [C] style int (ex: 0x001122)",
+				desc = "C[o]nvert to [C] style int (ex: 0xb7416e)",
 			},
 			{
 				"<leader>or",
 				"<cmd>ConvertColorTo rgb<cr>",
 				mode = { "n", "x", "o" },
-				desc = "C[o]nvert to [R]gb (ex: rgb(0, 100, 200))",
+				desc = "C[o]nvert to [R]gb (ex: rgb(55, 199, 139))",
 			},
 			{
 				"<leader>of",
@@ -30,12 +30,8 @@ return {
 				"<leader>oh",
 				"<cmd>ConvertColorTo hsl<cr>",
 				mode = { "n", "x", "o" },
-				desc = "C[o]nvert to [H]sl (ex: hsl(200, 20%, 10%))",
+				desc = "C[o]nvert to [H]sl (ex: )hsl(38, 60%, 57%)",
 			},
 		},
 	},
-	-- { -- Highlight hex/rgb colors inside code
-	-- 	"norcalli/nvim-colorizer.lua",
-	-- 	config = true,
-	-- },
 }
