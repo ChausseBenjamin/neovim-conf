@@ -36,15 +36,6 @@ return {
 				desc = "[P]aruse with [G]rep",
 			},
 			{
-				"<leader>ps",
-				function()
-					vim.ui.input({ prompt = "Grep > " }, function(input)
-						require("telescope.builtin").grep_string({ input })
-					end)
-				end,
-				desc = "[P]roject [S]earch",
-			},
-			{
 				"<leader>fq",
 				function()
 					require("telescope.builtin").quickfix()

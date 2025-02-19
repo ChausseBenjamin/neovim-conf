@@ -3,6 +3,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = {
 			"williamboman/mason.nvim",
+			"stevearc/dressing.nvim",
 		},
 		event = { "BufReadPre", "BufNewFile" },
 	},
