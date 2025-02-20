@@ -6,20 +6,80 @@ return {
 		config = function() end,
 		-- Only load when using one of the following commands:
 		keys = {
-			{ "<leader>gs", "<cmd>G<CR>", desc = "[G]it [S]tatus" },
-			{ "<leader>gd", "<cmd>G difftool<CR>", desc = "[G]it [D]iff" },
-			{ "<leader>gc", "<cmd>G commit<CR>", desc = "[G]it [C]ommit" },
-			{ "<leader>gu", "<cmd>G push<CR>", desc = "[G]it p[u]sh" },
-			{ "<leader>gp", "<cmd>G pull<CR>", desc = "[G]it [P]ull" },
-			{ "<leader>gf", "<cmd>G fetch<CR>", desc = "[G]it [F]etch" },
-			{ "<leader>ds", "<cmd>Gvdiffsplit!<CR>", desc = "Git [D]iff [S]plit" },
-			{ "<leader>dh", "<cmd>diffget //2 | diffupdate<CR>" },
-			{ "<leader>dl", "<cmd>diffget //3 | diffupdate<CR>" },
-			{ "<leader>do", "<cmd>only<CR>", desc = "[D]iff [O]nly" },
+			-- commands that accept ranges
+			{
+				"<leader>gh",
+				function()
+					if vim.fn.mode():match("[vV]") then
+						local start_line = vim.fn.line("'<")
+						local end_line = vim.fn.line("'>")
+						vim.cmd(start_line .. "," .. end_line .. "Gclog")
+					else
+						vim.cmd.Gclog()
+					end
+				end,
+				desc = "[G]it [H]istory",
+				mode = { "n", "v", "x" },
+			},
+			{
+				"<leader>gb",
+				function()
+					if vim.fn.mode():match("[vV]") then
+						local start_line = vim.fn.line("'<")
+						local end_line = vim.fn.line("'>")
+						vim.cmd(start_line .. "," .. end_line .. "G blame")
+					else
+						vim.cmd.Gclog()
+					end
+				end,
+				desc = "[G]it [B]lame",
+				mode = { "n", "v", "x" },
+			},
+			-- non range commands
+			{ "<leader>gs", vim.cmd.Git, desc = "[G]it [S]tatus" },
+			{
+				"<leader>gd",
+				function()
+					vim.cmd.Git("difftool")
+				end,
+				desc = "[G]it [D]iff",
+			},
+			{
+				"<leader>gc",
+				function()
+					vim.cmd.Git("commit")
+				end,
+				desc = "[G]it [C]ommit",
+			},
+			{
+				"<leader>gu",
+				function()
+					vim.cmd.Git("push")
+				end,
+				desc = "[G]it p[u]sh",
+			},
+			{
+				"<leader>gp",
+				function()
+					vim.cmd.Git("pull")
+				end,
+				desc = "[G]it [P]ull",
+			},
+			{
+				"<leader>gf",
+				function()
+					vim.cmd.Git("fetch")
+				end,
+				desc = "[G]it [F]etch",
+			},
+			{ "<leader>ds", "<cmd>Gvdiffsplit!<cr>", desc = "Git [D]iff [S]plit" },
+			{ "<leader>dh", "<cmd>diffget //2 | diffupdate<cr>", desc = "[D]iff select left" },
+			{ "<leader>dl", "<cmd>diffget //3 | diffupdate<cr>", desc = "[D]iff select right" },
+			{ "<leader>do", vim.cmd.only, desc = "[D]iff [O]nly" },
 			-- NOTE: dp (no leader) is already set to diffput | diffupdate by default
 		},
 	},
-	{ -- Since ignoring files is part of a git workflow
+	{
 		"antonk52/gitignore-grabber.nvim",
 		dependencies = {
 			{ "nvim-telescope/telescope.nvim" },
