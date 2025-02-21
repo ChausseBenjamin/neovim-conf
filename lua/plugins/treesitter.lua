@@ -109,4 +109,8 @@ return {
 			vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T_expr, { expr = true })
 		end,
 	},
+	{
+		"bezhermoso/tree-sitter-ghostty",
+		build = "make nvim_install",
+	},
 }
