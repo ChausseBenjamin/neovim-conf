@@ -71,12 +71,12 @@ return {
 			},
 		})
 
-		require("mini.pairs").setup({
-			mappings = {
-				["`"] = false,
-			},
-		})
-
+		-- require("mini.pairs").setup({
+		-- 	mappings = {
+		-- 		["`"] = false,
+		-- 	},
+		-- })
+		--
 		require("mini.bracketed").setup({
 			-- Disable what's unnecessary or overlaps
 			file = { suffix = "", options = {} },
