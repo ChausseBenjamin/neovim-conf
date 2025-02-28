@@ -4,7 +4,7 @@ return {
 		config = function()
 			local conf = {
 				chat_user_prefix = " " .. (vim.fn.getenv("USER") or "User") .. ":",
-				chat_assistant_prefix = { "󰚩 ", "[{{agent}}]:" },
+				chat_assistant_prefix = { " ", "[{{agent}}]:" },
 				providers = {
 					openai = { disable = true },
 					googleai = { disable = true },
@@ -176,7 +176,7 @@ return {
 			build = "make tiktoken", -- Only on MacOS or Linux
 			opts = {
 				question_header = " " .. (vim.fn.getenv("USER") or "User") .. ": ", -- Header to use for user questions
-				answer_header = "󰚩 Copilot: ", -- Header to use for AI answers
+				answer_header = " Copilot: ", -- Header to use for AI answers
 				error_header = " Error ", -- Header to use for errors
 				separator = "-----", -- Separator to use in chat
 				-- See Configuration section for options
