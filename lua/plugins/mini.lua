@@ -23,6 +23,9 @@ return {
 		vim.keymap.set("n", "cs", function()
 			vim.notify("Oops, your muscle memory tried using the Tpope surround...")
 		end)
+		vim.keymap.set("n", "ds", function()
+			vim.notify("Oops, your muscle memory tried using the Tpope surround...")
+		end)
 
 		-- Animations and delay were annoying for this one...
 		local no_indent_anim = require("mini.indentscope").gen_animation.none
