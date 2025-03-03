@@ -119,6 +119,9 @@ return {
 			)
 			vim.keymap.set({ "n", "x", "o" }, "]h", next_hunk, { desc = "next [H]unk" })
 			vim.keymap.set({ "n", "x", "o" }, "[h", prev_hunk, { desc = "prev [H]unk" })
+			vim.keymap.set("n", "<leader>gl", function()
+				require("gitsigns").blame_line()
+			end, { desc = "Blame current [L]ine" })
 		end,
 	},
 	{ -- Because I use yadm for dotfiles
