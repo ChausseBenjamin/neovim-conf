@@ -29,10 +29,24 @@ return {
 						local end_line = vim.fn.line("'>")
 						vim.cmd(start_line .. "," .. end_line .. "G blame")
 					else
-						vim.cmd.Gclog()
+						vim.cmd.G("blame")
 					end
 				end,
 				desc = "[G]it [B]lame",
+				mode = { "n", "v", "x" },
+			},
+			{
+				"<leader>gg",
+				function()
+					if vim.fn.mode():match("[vV]") then
+						local start_line = vim.fn.line("'<")
+						local end_line = vim.fn.line("'>")
+						vim.cmd(start_line .. "," .. end_line .. "GBrowse")
+					else
+						vim.cmd.GBrowse()
+					end
+				end,
+				desc = "[G]it [G]o",
 				mode = { "n", "v", "x" },
 			},
 			-- non range commands
