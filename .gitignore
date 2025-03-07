@@ -46,9 +46,6 @@ luac.out
 *.x86_64
 *.hex
 
-### Lazy.nvim ###
-lazy-lock.json
-
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
