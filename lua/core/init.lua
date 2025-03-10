@@ -16,8 +16,10 @@ vim.opt.foldmethod = "marker" --- For `{{{` & `}}}` folding
 vim.opt.complete:append("kspell")
 vim.opt.inccommand = "split"
 vim.opt.spelllang = "fr" -- why does french exist...
-vim.api.nvim_set_keymap("n", "Y", "y$", {}) -- What should have been `Y`
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {}) -- terminal mode Esc
+
+-- Capital "Y" means clipboard now
+vim.keymap.set({ "n", "v", "x" }, "Y", '"+y', { desc = "Yank to clipboard", noremap = true })
 
 -- Netrw preferences
 vim.g.netrw_liststyle = 3
@@ -25,7 +27,7 @@ vim.g.netrw_banner = 0
 vim.g.netrw_bufsettings = "noma nomod nu nobl nowrap ro"
 
 -- Clear search highlights
-vim.keymap.set("n", "<leader><leader>l", "<cmd>nohlsearch<cr>")
+vim.keymap.set("n", "<leader><leader>l", "<cmd>nohlsearch<cr>", { desc = "Clear search highlights" })
 
 -- Don't mess with pasted text
 vim.keymap.set("i", "<C-r>+", "<C-r><C-o>+")
@@ -69,10 +71,10 @@ vim.keymap.set("n", "<leader>mo", "<cmd>!opout %<cr>") -- M.ake O.pen
 -- Make sure I don't accidentally delete with 'S' when not using an LSP:
 vim.keymap.set("n", "S", "<nop>")
 -- Stop hurting my pinky with <C-w>:
-vim.keymap.set("n", "<leader>w", "<C-w>")
+vim.keymap.set("n", "<leader>w", "<C-w>", { desc = "Window/Split Management" })
 -- Quickly navigate between Tabs
-vim.keymap.set("n", "<Bslash>", "<cmd>tabnext<cr>")
-vim.keymap.set("n", "<C-\\>", "<cmd>tabnew<cr>")
+vim.keymap.set("n", "<Bslash>", "<cmd>tabnext<cr>", { desc = "View next tab" })
+vim.keymap.set("n", "<C-\\>", "<cmd>tabnew<cr>", { desc = "Create a new tab" })
 vim.opt.conceallevel = 2
 
 function DefaultLspServers()
