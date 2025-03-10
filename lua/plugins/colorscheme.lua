@@ -25,6 +25,7 @@ return { -- No nonsense, very stoic
 		vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none", fg = "#727272" })
 		vim.api.nvim_set_hl(0, "StatusLine", { bg = "none", fg = "#727272" })
 		vim.api.nvim_set_hl(0, "LazyNormal", { bg = fullbg })
+		vim.api.nvim_set_hl(0, "LazyProgressDone", { bg = "none", fg = "#ab8450" })
 		-- vim.api.nvim_set_hl(0,"MasonNormal",{bg=fullbg})
 		vim.api.nvim_set_hl(0, "NormalFloat", { bg = fullbg })
 		vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = fullbg })
