@@ -39,6 +39,7 @@ return {
 		-- Custom treesitter mappings
 		local gen_spec = require("mini.ai").gen_spec
 		require("mini.ai").setup({
+			n_lines = 300,
 			custom_textobjects = {
 				F = gen_spec.treesitter({ -- `f` is for function calls not definitions
 					a = "@function.outer",

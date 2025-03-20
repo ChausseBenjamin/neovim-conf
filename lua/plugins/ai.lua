@@ -181,6 +181,73 @@ return {
 				separator = "-----", -- Separator to use in chat
 				-- See Configuration section for options
 			},
+			keys = {
+				{
+					"<leader>cc",
+					"<cmd>CopilotChatChatToggle<cr>",
+					mode = { "n", "v", "x" },
+					desc = "[C]opilot [C]hat",
+				},
+				{
+					"<leader>cd",
+					"<cmd>CopilotChatDocs<cr>",
+					mode = { "n", "v", "x" },
+					desc = "[C]opilot [D]ocs",
+				},
+				{
+					"<leader>ce",
+					"<cmd>CopilotChatExplain<cr>",
+					mode = { "n", "v", "x" },
+					desc = "[C]opilot [E]xplain",
+				},
+				{
+					"<leader>cf",
+					"<cmd>CopilotChatFix<cr>",
+					mode = { "n", "v", "x" },
+					desc = "[C]opilot [F]ix",
+				},
+				{
+					"<leader>cc",
+					"<cmd>CopilotChatCommit<cr>",
+					mode = { "n", "v", "x" },
+					desc = "[C]opilot [G]it-commit",
+				},
+				{
+					"<leader>co",
+					"<cmd>CopilotChatOptimize<cr>",
+					mode = { "n", "v", "x" },
+					desc = "[C]opilot [O]ptimize",
+				},
+				{
+					"<leader>cr",
+					"<cmd>CopilotChatReview<cr>",
+					mode = { "n", "v", "x" },
+					desc = "[C]opilot [R]eview",
+				},
+				{
+					"<leader>ct",
+					"<cmd>CopilotChatTests<cr>",
+					mode = { "n", "v", "x" },
+					desc = "[C]opilot [T]ests",
+				},
+				{
+					"<leader>ch",
+					"<cmd>CopilotChatReset<cr>",
+					mode = { "n", "v", "x" },
+					desc = "[C]opilot [H]ard Reset",
+				},
+			},
+			cmd = {
+				"CopilotChatChatToggle",
+				"CopilotChatDocs",
+				"CopilotChatExplain",
+				"CopilotChatFix",
+				"CopilotChatCommit",
+				"CopilotChatOptimize",
+				"CopilotChatReview",
+				"CopilotChatTests",
+				"CopilotChatReset",
+			},
 			-- See Commands section for default commands if you want to lazy load on them
 		},
 	},
