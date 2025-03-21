@@ -170,7 +170,7 @@ return {
 		{
 			"CopilotC-Nvim/CopilotChat.nvim",
 			dependencies = {
-				{ "zbirenbaum/copilot.lua" },
+				{ "zbirenbaum/copilot.lua", config = true },
 				{ "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
 			},
 			build = "make tiktoken", -- Only on MacOS or Linux
@@ -184,7 +184,7 @@ return {
 			keys = {
 				{
 					"<leader>cc",
-					"<cmd>CopilotChatChatToggle<cr>",
+					"<cmd>CopilotChatToggle<cr>",
 					mode = { "n", "v", "x" },
 					desc = "[C]opilot [C]hat",
 				},
@@ -207,10 +207,16 @@ return {
 					desc = "[C]opilot [F]ix",
 				},
 				{
-					"<leader>cc",
+					"<leader>cg",
 					"<cmd>CopilotChatCommit<cr>",
 					mode = { "n", "v", "x" },
 					desc = "[C]opilot [G]it-commit",
+				},
+				{
+					"<leader>ch",
+					"<cmd>CopilotChatReset<cr>",
+					mode = { "n", "v", "x" },
+					desc = "[C]opilot [H]ard Reset",
 				},
 				{
 					"<leader>co",
@@ -230,14 +236,9 @@ return {
 					mode = { "n", "v", "x" },
 					desc = "[C]opilot [T]ests",
 				},
-				{
-					"<leader>ch",
-					"<cmd>CopilotChatReset<cr>",
-					mode = { "n", "v", "x" },
-					desc = "[C]opilot [H]ard Reset",
-				},
 			},
 			cmd = {
+				"Copilot",
 				"CopilotChatChatToggle",
 				"CopilotChatDocs",
 				"CopilotChatExplain",
