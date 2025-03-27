@@ -60,13 +60,12 @@ return {
 			},
 		})
 
-		-- I prefer alt for OS level commands like dmenu...
 		require("mini.move").setup({
 			mappings = {
-				left = "<s-w>", -- west
-				right = "<s-e>", -- east
-				up = "<s-n>", -- north
-				down = "<s-s>", -- south
+				left = "<Left>", -- west
+				right = "<Right>", -- east
+				up = "<Up>", -- north
+				down = "<Down>", -- south
 				-- Disable normal mode bindings
 				line_left = "",
 				line_right = "",
@@ -75,12 +74,6 @@ return {
 			},
 		})
 
-		-- require("mini.pairs").setup({
-		-- 	mappings = {
-		-- 		["`"] = false,
-		-- 	},
-		-- })
-		--
 		require("mini.bracketed").setup({
 			-- Disable what's unnecessary or overlaps
 			file = { suffix = "", options = {} },
