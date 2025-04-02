@@ -3,7 +3,7 @@ return {
 	dependencies = "nvim-telescope/telescope.nvim",
 	opts = {
 		new_tab_explorer = false, -- Set to true to use `:Exp` on new tabs
-		drop_locations = "~/.cache/nvim_dropsites.lua",
+		drop_locations = "~/.cache/nvim-dropsites.lua",
 	},
 	keys = {
 		{
