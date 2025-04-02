@@ -15,12 +15,12 @@ return {
 			desc = "[D]ropship in a new [T]ab",
 		},
 		{
-			"<leader>dh",
+			"<leader>dc",
 			function() -- uses `:tcd` on current tab
 				require("dropship").current_tab()
 			end,
 			mode = "n",
-			desc = "[D]ropship right [H]ere",
+			desc = "[D]ropship [C]urrent tab",
 		},
 		{
 			"<leader>dg",
