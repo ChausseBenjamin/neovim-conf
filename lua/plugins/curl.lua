@@ -11,8 +11,8 @@ return {
 		open_with = "split",
 	},
 	keys = {
-		{ -- C.url C.url
-			"<leader>cc",
+		{ -- CUrl
+			"<leader>cu",
 			function()
 				require("curl").open_curl_tab()
 			end,
