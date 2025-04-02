@@ -36,6 +36,13 @@ return {
 				desc = "[P]aruse with [G]rep",
 			},
 			{
+				"<leader>ph",
+				function()
+					require("telescope.builtin").help_tags()
+				end,
+				desc = "[P]aruse [H]elp",
+			},
+			{
 				"<leader>pw",
 				function()
 					require("telescope.builtin").live_grep({
