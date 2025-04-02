@@ -74,6 +74,7 @@ vim.keymap.set("n", "S", "<nop>")
 vim.keymap.set("n", "<leader>w", "<C-w>", { desc = "Window/Split Management" })
 -- Quickly navigate between Tabs
 vim.keymap.set("n", "<Bslash>", "<cmd>tabnext<cr>", { desc = "View next tab" })
+vim.keymap.set("n", "<Bar>", "<cmd>tabprev<cr>", { desc = "View previous tab" })
 vim.keymap.set("n", "<C-\\>", "<cmd>tabnew<cr>", { desc = "Create a new tab" })
 vim.opt.conceallevel = 2
 
