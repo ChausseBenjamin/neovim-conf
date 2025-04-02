@@ -1,9 +1,23 @@
 return {
 	"ThePrimeagen/git-worktree.nvim",
 	dependencies = "nvim-telescope/telescope.nvim",
-	config = true,
+	config = {
+		change_directory_command = "tcd",
+	},
 	keys = {
-		{ "<Leader>pw", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>" },
-		{ "<Leader>pn", "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>" },
+		{
+			"<Leader>pr",
+			function()
+				require("telescope").extensions.git_worktree.git_worktrees()
+			end,
+			desc = "[P]aruse the [R]epo worktrees",
+		},
+		{
+			"<Leader>pn",
+			function()
+				require("telescope").extensions.git_worktree.create_git_worktree()
+			end,
+			desc = "[P]ut a [N]ew worktree here! (idk man...)",
+		},
 	},
 }

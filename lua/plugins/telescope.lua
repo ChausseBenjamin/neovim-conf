@@ -36,6 +36,22 @@ return {
 				desc = "[P]aruse with [G]rep",
 			},
 			{
+				"<leader>ph",
+				function()
+					require("telescope.builtin").help_tags()
+				end,
+				desc = "[P]aruse [H]elp",
+			},
+			{
+				"<leader>pw",
+				function()
+					require("telescope.builtin").live_grep({
+						search_dirs = { vim.fn.expand("%:p") },
+					})
+				end,
+				desc = "[P]aruse [W]ithin file",
+			},
+			{
 				"<leader>fq",
 				function()
 					require("telescope.builtin").quickfix()

@@ -62,10 +62,10 @@ return {
 
 		require("mini.move").setup({
 			mappings = {
-				left = "<Left>", -- west
-				right = "<Right>", -- east
-				up = "<Up>", -- north
-				down = "<Down>", -- south
+				left = "<Left>",
+				right = "<Right>",
+				up = "<Up>",
+				down = "<Down>",
 				-- Disable normal mode bindings
 				line_left = "",
 				line_right = "",
