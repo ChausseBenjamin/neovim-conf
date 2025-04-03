@@ -28,6 +28,10 @@ require("lazy").setup({
 	-- add more subdirectories as needed
 }, {
 	install = { colorscheme = { "no-clown-fiesta" } },
+	dev = {
+		path = "~/Workspace/plugins",
+		fallback = true,
+	},
 }, {
 	checker = {
 		enabled = true,

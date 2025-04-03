@@ -1,4 +1,5 @@
 return {
+	dev = true,
 	"ChausseBenjamin/dropship.nvim",
 	dependencies = "nvim-telescope/telescope.nvim",
 	opts = {
