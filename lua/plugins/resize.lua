@@ -7,4 +7,5 @@ return {
 	keys = {
 		{ "<leader><leader>w", "<Cmd>WinResizerStartResize<CR>" },
 	},
+	cmd = "WinResizerStartResize",
 }

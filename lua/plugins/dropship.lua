@@ -24,12 +24,34 @@ return {
 			desc = "[D]ropship [C]urrent tab",
 		},
 		{
-			"<leader>dg",
+			"<leader>de",
 			function() -- uses `:cd`
 				require("dropship").globally()
 			end,
 			mode = "n",
-			desc = "[D]ropship [G]lobally",
+			desc = "[D]ropship [E]verywhere",
+		},
+		{
+			"<leader>dg",
+			function() -- uses `:cd`
+				require("dropship").new_tab({
+					drop_locations = {
+						{ name = "CPROC Charts", dir = "~/Workspace/cproc-charts/master" },
+						{ name = "Datacenter", dir = "~/Workspace/datacenter/datacenter" },
+						{ name = "DC Management", dir = "~/Workspace/dc_management/master" },
+						{ name = "DockerPBX", dir = "~/Workspace/dockerpbx/master" },
+						{ name = "GitOps", dir = "~/Workspace/gitops-voice-platform" },
+						{ name = "Go Logger", dir = "~/Workspace/go-logger" },
+						{ name = "Prodtools", dir = "~/Workspace/jive-utils" },
+						{ name = "Monorepo", dir = "~/Workspace/monorepo-go/master" },
+						{ name = "Integration Tests", dir = "~/Workspace/python-integration-test-common" },
+						{ name = "Termpicker", dir = "~/Workspace/termpicker" },
+					},
+				})
+				require("telescope.builtin").git_files()
+			end,
+			mode = "n",
+			desc = "[D]ropship [G]it Projects",
 		},
 	},
 	cmd = {
