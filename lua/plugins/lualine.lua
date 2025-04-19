@@ -32,9 +32,9 @@ return {
 				ignore_focus = {},
 				always_divide_middle = false,
 				refresh = {
-					statusline = 500,
-					tabline = 500,
-					winbar = 0,
+					statusline = 20,
+					tabline = 150,
+					winbar = 1000,
 				},
 			},
 			sections = {

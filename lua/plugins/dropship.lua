@@ -24,12 +24,12 @@ return {
 			desc = "[D]ropship [C]urrent tab",
 		},
 		{
-			"<leader>dg",
+			"<leader>de",
 			function() -- uses `:cd`
 				require("dropship").globally()
 			end,
 			mode = "n",
-			desc = "[D]ropship [G]lobally",
+			desc = "[D]ropship [E]verywhere",
 		},
 	},
 	cmd = {

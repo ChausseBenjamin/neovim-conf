@@ -87,6 +87,14 @@ vim.keymap.set("n", "<Bslash>", "<cmd>tabnext<cr>", { desc = "View next tab" })
 vim.keymap.set("n", "<Bar>", "<cmd>tabprev<cr>", { desc = "View previous tab" })
 vim.keymap.set("n", "<C-\\>", "<cmd>tabnew<cr>", { desc = "Create a new tab" })
 vim.opt.conceallevel = 2
+-- Quickly navigate between Buffers
+vim.keymap.set("n", "<Tab>", "<cmd>bnext<cr>", { desc = "View next buffer" })
+vim.keymap.set(
+	"n",
+	"<S-Tab>",
+	"<cmd>bprev<cr>",
+	{ desc = "View previous buffer" }
+)
 
 function DefaultLspServers()
 	return {
