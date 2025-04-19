@@ -6,7 +6,8 @@ return {
 	{
 		"AntonVanAssche/date-time-inserter.nvim",
 		config = function()
-			local date_time_inserter_status_ok, date_time_inserter = pcall(require, "date-time-inserter")
+			local date_time_inserter_status_ok, date_time_inserter =
+				pcall(require, "date-time-inserter")
 			if not date_time_inserter_status_ok then
 				return
 			end

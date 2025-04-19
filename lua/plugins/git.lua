@@ -87,8 +87,16 @@ return {
 				desc = "[G]it [F]etch",
 			},
 			{ "<leader>ds", "<cmd>Gvdiffsplit!<cr>", desc = "Git [D]iff [S]plit" },
-			{ "<leader>dh", "<cmd>diffget //2 | diffupdate<cr>", desc = "[D]iff select left" },
-			{ "<leader>dl", "<cmd>diffget //3 | diffupdate<cr>", desc = "[D]iff select right" },
+			{
+				"<leader>dh",
+				"<cmd>diffget //2 | diffupdate<cr>",
+				desc = "[D]iff select left",
+			},
+			{
+				"<leader>dl",
+				"<cmd>diffget //3 | diffupdate<cr>",
+				desc = "[D]iff select right",
+			},
 			{ "<leader>do", vim.cmd.only, desc = "[D]iff [O]nly" },
 			-- NOTE: dp (no leader) is already set to diffput | diffupdate by default
 		},
@@ -131,8 +139,18 @@ return {
 					gs.nav_hunk("prev", navopts())
 				end
 			)
-			vim.keymap.set({ "n", "x", "o" }, "]h", next_hunk, { desc = "next [H]unk" })
-			vim.keymap.set({ "n", "x", "o" }, "[h", prev_hunk, { desc = "prev [H]unk" })
+			vim.keymap.set(
+				{ "n", "x", "o" },
+				"]h",
+				next_hunk,
+				{ desc = "next [H]unk" }
+			)
+			vim.keymap.set(
+				{ "n", "x", "o" },
+				"[h",
+				prev_hunk,
+				{ desc = "prev [H]unk" }
+			)
 			vim.keymap.set("n", "<leader>gl", function()
 				require("gitsigns").blame_line()
 			end, { desc = "Blame current [L]ine" })
