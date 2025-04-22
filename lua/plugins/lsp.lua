@@ -185,7 +185,7 @@ return {
 				javascript = { "prettierd" },
 				php = { "pretty-php" },
 				-- go = { "gofumpt" },
-				go = { "gofumpt", "gci", "goimports" },
+				-- go = { "gofumpt", "gci", "goimports" },
 				yaml = { "yamlfix" },
 				graphql = { "prettierd" },
 				sql = { "sqlfmt" },

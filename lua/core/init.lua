@@ -27,7 +27,9 @@ vim.g.netrw_banner = 0
 vim.g.netrw_bufsettings = "noma nomod nu nobl nowrap ro"
 
 -- Clear search highlights
-vim.keymap.set("n", "<leader><leader>l", "<cmd>nohlsearch<cr>", { desc = "Clear search highlights" })
+vim.keymap.set("n", "<leader><leader>l", function()
+	vim.cmd.nohlsearch()
+end, { desc = "Clear search highlights" })
 
 -- Don't mess with pasted text
 vim.keymap.set("i", "<C-r>+", "<C-r><C-o>+")
@@ -63,23 +65,42 @@ end
 cd_to_git_root()
 
 -- Quickly compile and preview files
-vim.keymap.set("n", "<leader>mm", "<cmd>make<cr>") -- M.ake
-vim.keymap.set("n", "<leader>ma", "<cmd>make<cr>") -- M.ake A.ll
-vim.keymap.set("n", "<leader>mc", "<cmd>make<cr>") -- M.ake C.lean
-vim.keymap.set("n", "<leader>mo", "<cmd>!opout %<cr>") -- M.ake O.pen
+vim.keymap.set("n", "<leader>mm", function()
+	vim.cmd.make()
+end)
+vim.keymap.set("n", "<leader>ma", function()
+	vim.cmd.make("all")
+end)
+vim.keymap.set("n", "<leader>mc", function()
+	vim.cmd.make("clean")
+end)
+vim.keymap.set( -- M.ake O.pen
+	"n",
+	"<leader>mo",
+	function()
+		vim.fn.system("opout " .. vim.fn.expand("%"))
+	end
+)
 
 -- Make sure I don't accidentally delete with 'S' when not using an LSP:
 vim.keymap.set("n", "S", "<nop>")
 -- Stop hurting my pinky with <C-w>:
 vim.keymap.set("n", "<leader>w", "<C-w>", { desc = "Window/Split Management" })
 -- Quickly navigate between Tabs
-vim.keymap.set("n", "<Bslash>", "<cmd>tabnext<cr>", { desc = "View next tab" })
-vim.keymap.set("n", "<Bar>", "<cmd>tabprev<cr>", { desc = "View previous tab" })
-vim.keymap.set("n", "<C-\\>", "<cmd>tabnew<cr>", { desc = "Create a new tab" })
+vim.keymap.set("n", "<Bslash>", function()
+	vim.cmd.tabnext()
+end, { desc = "View next tab" })
+vim.keymap.set("n", "<C-\\>", function()
+	vim.cmd.tabnew()
+end, { desc = "Create a new tab" })
 vim.opt.conceallevel = 2
 -- Quickly navigate between Buffers
-vim.keymap.set("n", "<Tab>", "<cmd>bnext<cr>", { desc = "View next buffer" })
-vim.keymap.set("n", "<S-Tab>", "<cmd>bprev<cr>", { desc = "View previous buffer" })
+vim.keymap.set("n", "<Tab>", function()
+	vim.cmd.bnext()
+end, { desc = "View next buffer" })
+vim.keymap.set("n", "<S-Tab>", function()
+	vim.cmd.bprev()
+end, { desc = "View previous buffer" })
 
 function DefaultLspServers()
 	return {

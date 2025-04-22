@@ -179,6 +179,7 @@ return {
 				answer_header = " Copilot: ", -- Header to use for AI answers
 				error_header = " Error ", -- Header to use for errors
 				separator = "-----", -- Separator to use in chat
+				model = "claude-3.7-sonnet", -- Default model to use, see ':CopilotChatModels' for available models (can be specified manually in prompt via $).
 				-- See Configuration section for options
 			},
 			keys = {
