@@ -19,7 +19,12 @@ vim.opt.spelllang = "fr" -- why does french exist...
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {}) -- terminal mode Esc
 
 -- Capital "Y" means clipboard now
-vim.keymap.set({ "n", "v", "x" }, "Y", '"+y', { desc = "Yank to clipboard", noremap = true })
+vim.keymap.set(
+	{ "n", "v", "x" },
+	"Y",
+	'"+y',
+	{ desc = "Yank to clipboard", noremap = true }
+)
 
 -- Netrw preferences
 vim.g.netrw_liststyle = 3

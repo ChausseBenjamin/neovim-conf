@@ -66,12 +66,10 @@ return {
 					{ buffer = 0, desc = "Rename object across all occurences" }
 				)
 
-				vim.keymap.set(
-					"n",
-					"gd",
-					vim.lsp.buf.definition,
-					{ buffer = 0, desc = "Go to the location where the object is defined" }
-				)
+				vim.keymap.set("n", "gd", vim.lsp.buf.definition, {
+					buffer = 0,
+					desc = "Go to the location where the object is defined",
+				})
 
 				vim.keymap.set(
 					"n",
@@ -94,7 +92,12 @@ return {
 					{ buffer = 0, desc = "Go to references of the object" }
 				)
 
-				vim.keymap.set("n", "<leader>fa", vim.lsp.buf.code_action, { buffer = 0, desc = "" })
+				vim.keymap.set(
+					"n",
+					"<leader>fa",
+					vim.lsp.buf.code_action,
+					{ buffer = 0, desc = "" }
+				)
 				vim.keymap.set(
 					"n",
 					"]d",
@@ -110,12 +113,10 @@ return {
 				)
 
 				-- S is the same as cc, I'd rather use it for something more useful
-				vim.keymap.set(
-					"n",
-					"S",
-					vim.diagnostic.open_float,
-					{ buffer = 0, desc = "View diagnostics information in a floating window" }
-				)
+				vim.keymap.set("n", "S", vim.diagnostic.open_float, {
+					buffer = 0,
+					desc = "View diagnostics information in a floating window",
+				})
 			end
 
 			for _, server in ipairs(DefaultLspServers()) do

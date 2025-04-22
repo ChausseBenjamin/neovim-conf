@@ -133,7 +133,8 @@ return {
 				rgba = { -- Ex: rgba(103, 199, 163, 0.4)
 					pattern = "rgba%(%d+,%s*%d+,%s*%d+,%s*[01]?%.?%d*%)",
 					group = function(_, match)
-						local r, g, b = match:match("rgba%((%d+),%s*(%d+),%s*(%d+),%s*[01]?%.?%d*%)")
+						local r, g, b =
+							match:match("rgba%((%d+),%s*(%d+),%s*(%d+),%s*[01]?%.?%d*%)")
 						local hex = string.format("#%02x%02x%02x", r, g, b) -- Ignore alpha
 						return require("mini.hipatterns").compute_hex_color_group(hex, "bg")
 					end,
@@ -181,7 +182,8 @@ return {
 					pattern = "hsl%(%d+,%s*%d+%%,%s*%d+%%%)",
 					group = function(_, match)
 						local h, s, l = match:match("hsl%((%d+),%s*(%d+)%%,%s*(%d+)%%%)")
-						local r, g, b = hsl_to_rgb(tonumber(h), tonumber(s) / 100, tonumber(l) / 100)
+						local r, g, b =
+							hsl_to_rgb(tonumber(h), tonumber(s) / 100, tonumber(l) / 100)
 						local hex = string.format("#%02x%02x%02x", r, g, b)
 						return hex_colorgroup(hex, "bg")
 					end,
