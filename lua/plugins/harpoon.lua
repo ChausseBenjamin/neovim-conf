@@ -17,6 +17,7 @@ return {
 			"<leader>h",
 			function()
 				require("harpoon"):list():add()
+				vim.print("Harpoon added!")
 			end,
 			mode = "n",
 			desc = "Add Harpoon",
