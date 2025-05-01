@@ -98,19 +98,13 @@ return {
 					vim.lsp.buf.code_action,
 					{ buffer = 0, desc = "" }
 				)
-				vim.keymap.set(
-					"n",
-					"]d",
-					vim.diagnostic.goto_next,
-					{ buffer = 0, desc = "Go to the next diagnostic/issue" }
-				)
+				vim.keymap.set("n", "]d", function()
+					vim.diagnostic.jump({ count = 1, float = true })
+				end, { buffer = 0, desc = "Go to the next diagnostic/issue" })
 
-				vim.keymap.set(
-					"n",
-					"[d",
-					vim.diagnostic.goto_prev,
-					{ buffer = 0, desc = "Go to the previous diagnostic/issue" }
-				)
+				vim.keymap.set("n", "[d", function()
+					vim.diagnostic.jump({ count = -1, float = true })
+				end, { buffer = 0, desc = "Go to the previous diagnostic/issue" })
 
 				-- S is the same as cc, I'd rather use it for something more useful
 				vim.keymap.set("n", "S", vim.diagnostic.open_float, {
