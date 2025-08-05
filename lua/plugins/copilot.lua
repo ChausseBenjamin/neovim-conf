@@ -1,19 +1,16 @@
---                   _ _       _   
---   ___ ___  _ __ (_) | ___ | |_ 
+
+--   ___ ___  _ __ (_) | ___ | |_
 --  / __/ _ \| '_ \| | |/ _ \| __|
--- | (_| (_) | |_) | | | (_) | |_ 
+-- | (_| (_) | |_) | | | (_) | |_
 --  \___\___/| .__/|_|_|\___/ \__|
---           |_|                 
+--           |_|
 --
 -- GitHub Copilot Integration
 
 vim.pack.add({
+	{ src = GH .. "nvim-lua/plenary.nvim" },
 	{ src = GH .. "zbirenbaum/copilot.lua" },
-	{ src = GH .. "nvim-lua/plenary.nvim", version = vim.version.range('master') },
-	{
-		src = GH .. "CopilotC-Nvim/CopilotChat.nvim",
-		build = "make tiktoken"
-	}
+	{ src = GH .. "CopilotC-Nvim/CopilotChat.nvim" }
 })
 
 require('copilot').setup({})
