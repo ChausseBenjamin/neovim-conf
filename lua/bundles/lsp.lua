@@ -7,7 +7,6 @@
 --
 -- Custom tweaks to pre-made lsp configurations
 
--- require("plugins.blink")
 vim.pack.add {
 	{ src = GH .. 'neovim/nvim-lspconfig' },
 }
@@ -22,10 +21,13 @@ vim.lsp.enable({
 	"rust_analyser",
 	"rustowl",
 	"zls",
+	"rust"
 })
 
--- Load the completion engine now the that the LSP is setup
+-- Load more stuff now that the lsp is installed
 require('plugins.blink')
+require('plugins.rustowl')
+
 
 -- tweaks to mute lua errors in the Neovim config:
 vim.lsp.config("lua_ls", {
