@@ -1,0 +1,9 @@
+--            _
+--  _ __ ___ (_)___  ___
+-- | '_ ` _ \| / __|/ __|
+-- | | | | | | \__ \ (__
+-- |_| |_| |_|_|___/\___|
+--
+-- For those plugins that don't fit anywhere else
+
+require('plugins.dadbod')

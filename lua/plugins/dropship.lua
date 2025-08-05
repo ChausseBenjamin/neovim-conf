@@ -1,40 +1,47 @@
-return {
-	dev = true,
-	"ChausseBenjamin/dropship.nvim",
-	dependencies = "nvim-telescope/telescope.nvim",
-	opts = {
-		new_tab_explorer = false, -- Set to true to use `:Exp` on new tabs
-		drop_locations = "~/.cache/nvim-dropsites.lua",
+--      _                     _     _
+--   __| |_ __ ___  _ __  ___| |__ (_)_ __
+--  / _` | '__/ _ \| '_ \/ __| '_ \| | '_ \
+-- | (_| | | | (_) | |_) \__ \ | | | | |_) |
+--  \__,_|_|  \___/| .__/|___/_| |_|_| .__/
+--                 |_|               |_|
+--
+-- Get dropped right back into you projects
+
+vim.pack.add({
+	{ src = GH .. "nvim-lua/plenary.nvim" },
+	{
+		src = GH .. "nvim-telescope/telescope.nvim",
+		version = vim.version.range('0.1')
 	},
-	keys = {
-		{
-			"<leader>dt",
-			function() -- creates a new tab, then uses `:tcd`
-				require("dropship").new_tab()
-			end,
-			mode = "n",
-			desc = "[D]ropship in a new [T]ab",
-		},
-		{
-			"<leader>dc",
-			function() -- uses `:tcd` on current tab
-				require("dropship").current_tab()
-			end,
-			mode = "n",
-			desc = "[D]ropship [C]urrent tab",
-		},
-		{
-			"<leader>de",
-			function() -- uses `:cd`
-				require("dropship").globally()
-			end,
-			mode = "n",
-			desc = "[D]ropship [E]verywhere",
-		},
+	{ src = GH .. "ChausseBenjamin/dropship.nvim" }
+})
+
+require('telescope').setup()
+
+local ds = require('dropship')
+ds.setup({
+	new_tab_explorer = false, -- Set to true to use `:Exp` on new tabs
+	drop_locations = "~/.cache/shortcuts.lua",
+})
+
+local ds_keys = {
+	{
+		k = "<leader>dt",
+		f = function() ds.new_tab() end,
+		d = "[D]ropship in a new [T]ab"
 	},
-	cmd = {
-		"DropshipCurrentTab",
-		"DropshipNewTab",
-		"DropshipGlobalDir",
+	{
+		k = "<leader>dc",
+		f = function() ds.current_tab() end,
+		d = "[D]ropship [C]urrent tab",
+	},
+	{
+		k ="<leader>de",
+		f = function() ds.globally() end,
+		d = "[D]ropship [E]verywhere",
 	},
 }
+
+for _, map in ipairs(ds_keys) do
+	vim.keymap.set("n", map.k, map.f, { desc = map.d })
+end

@@ -1,107 +1,90 @@
-return {
+--  _       _
+-- | |_ ___| | ___  ___  ___ ___  _ __   ___
+-- | __/ _ \ |/ _ \/ __|/ __/ _ \| '_ \ / _ \
+-- | ||  __/ |  __/\__ \ (_| (_) | |_) |  __/
+--  \__\___|_|\___||___/\___\___/| .__/ \___|
+--                               |_|
+--
+-- Guiding you through a sea of files
+
+vim.pack.add({
+	{ src = GH .. "nvim-lua/plenary.nvim" },
 	{
-		"nvim-telescope/telescope.nvim",
-		branch = "0.1.x",
-		dependencies = {
-			{ "nvim-lua/plenary.nvim" },
-		},
-		config = true,
-		keys = {
-			{
-				"<leader>pv",
-				function()
-					require("telescope.builtin").find_files()
-				end,
-				desc = "[P]aruse [F]iles",
-			},
-			{
-				"<leader>pb",
-				function()
-					require("telescope.builtin").buffers()
-				end,
-				desc = "[P]aruse [B]uffers",
-			},
-			{
-				"<leader>pd",
-				function()
-					require("telescope.builtin").diagnostics()
-				end,
-				desc = "[P]aruse [D]iagnostics",
-			},
-			{
-				"<leader>pg",
-				function()
-					require("telescope.builtin").live_grep()
-				end,
-				desc = "[P]aruse with [G]rep",
-			},
-			{
-				"<leader>ph",
-				function()
-					require("telescope.builtin").help_tags()
-				end,
-				desc = "[P]aruse [H]elp",
-			},
-			{
-				"<leader>pw",
-				function()
-					require("telescope.builtin").live_grep({
-						search_dirs = { vim.fn.expand("%:p") },
-					})
-				end,
-				desc = "[P]aruse [W]ithin file",
-			},
-			{
-				"<leader>fq",
-				function()
-					require("telescope.builtin").quickfix()
-				end,
-				desc = "[F]ind [Q]uickfix",
-			},
-			{
-				"<leader>fr",
-				function()
-					require("telescope.builtin").lsp_references()
-				end,
-				desc = "[F]ind [R]eferences",
-			},
-			{
-				"<C-p>",
-				function()
-					if Is_git_repo() then
-						require("telescope.builtin").git_files()
-					else
-						require("telescope.builtin").find_files()
-					end
-				end,
-				desc = "[P]aruse Git Files",
-			},
-		},
-		cmd = {
-			"Telescope",
-			"TelescopeFindFiles",
-			"TelescopeFindHelp",
-			"TelescopeQuickfix",
-			"TelescopeGitFiles",
-			"TelescopeGitCommits",
-			"TelescopeGrepBranches",
-		},
-	},
+		src = GH .. "nvim-telescope/telescope.nvim",
+		version = vim.version.range('0.1')
+	}
+})
+
+local ts = require('telescope')
+local tsb = require('telescope.builtin')
+
+ts.setup({})
+
+local ts_keys = {
 	{
-		"LukasPietzschmann/telescope-tabs",
-		config = function()
-			require("telescope").load_extension("telescope-tabs")
-			require("telescope-tabs").setup()
+		k = "<leader>pv",
+		f = function()
+			tsb.find_files()
 		end,
-		dependencies = { "nvim-telescope/telescope.nvim" },
-		keys = {
-			-- P.aruse T.abs
-			{
-				"<leader>pt",
-				function()
-					require("telescope-tabs").list_tabs()
-				end,
-			},
-		},
+		d = "[P]aruse [F]iles",
 	},
+	{
+		k = "<leader>pb",
+		f = function() tsb.buffers() end,
+		d = "[P]aruse [B]uffers",
+	},
+	{
+		k = "<leader>pd",
+		f = function() tsb.diagnostics() end,
+		d = "[P]aruse [D]iagnostics",
+	},
+	{
+		k = "<leader>pg",
+		f = function() tsb.live_grep() end,
+		d = "[P]aruse with [G]rep",
+	},
+	{
+		k = "<leader>ph",
+		f = function() tsb.help_tags() end,
+		d = "[P]aruse [H]elp",
+	},
+	{
+		k = "<leader>pw",
+		f = function()
+			tsb.live_grep({
+				search_dirs = { vim.fn.expand("%:p") }
+			})
+		end,
+		d = "[P]aruse [W]ithin file",
+	},
+	{
+		k = "<leader>fq",
+		f = function()
+			tsb.quickfix()
+		end,
+		d = "[F]ind [Q]uickfix",
+	},
+	{
+		k = "<leader>fr",
+		f = function()
+			tsb.lsp_references()
+		end,
+		d = "[F]ind [R]eferences",
+	},
+	{
+		k = "<C-p>",
+		f = function()
+			if Is_git_repo() then
+				tsb.git_files()
+			else
+				tsb.find_files()
+			end
+		end,
+		d = "[P]aruse Git Files",
+	}
 }
+
+-- K.ey M.ap
+for _, map in ipairs(ts_keys) do
+	vim.keymap.set("n", map.k, map.f, { desc = map.d })
+end
