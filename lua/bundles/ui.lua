@@ -14,6 +14,7 @@ vim.pack.add({
 
 -- UI tweaks
 require('plugins.treesitter')
+require('plugins.lualine')
 vim.o.winborder = "rounded"
 
 -- Setup must come before loading the colorscheme
@@ -43,5 +44,5 @@ vim.api.nvim_set_hl(0, "WinSeparator", { bg = plt.void, fg = plt.gray})
 vim.api.nvim_set_hl(0, "StatusLine", { bg = plt.void, fg = plt.gray})
 
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = plt.red})
-vim.fn.matchadd("ColorColumn", "\\%81v", 100)
+vim.fn.matchadd("ColorColumn", "\\%82v", 100)
 --

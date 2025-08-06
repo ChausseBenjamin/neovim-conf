@@ -6,6 +6,22 @@
 --
 -- Miscellaneous goodies
 
+-- Prefix used by *all* plugins loaded with vim.pack
+-- Ex: `vim.pack.add({ { src = GH ... "user/repo" } })`
+GH = "https://github.com/"
+
+-- Utility for my plugin development workflow
+function DevAdd(repo)
+  local name = repo:match(".+/(.+)$")
+  local local_path = vim.fn.expand("~/Workspace/plugins/" .. name)
+
+  if vim.fn.isdirectory(local_path) == 1 then
+    vim.opt.runtimepath:prepend(local_path)
+  else
+    vim.pack.add({ { src = GH .. repo } })
+  end
+end
+
 -- Remove trailing white space on save
 -- Except current line to avoid moving cursor
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
@@ -21,12 +37,12 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 
 -- Free a mapping (save and delete it, like dd)
 -- Returns the saved mapping info for later restoration
-function free_mapping(key, mode, buffer)
+function FreeMapping(key, mode, buffer)
 	mode = mode or "n"
 	buffer = buffer or 0
-	
+
 	local saved = vim.fn.maparg(key, mode, false, true)
-	
+
 	if saved and saved.lhs and saved.lhs ~= "" then
 		pcall(function()
 			if buffer == 0 then
@@ -36,31 +52,27 @@ function free_mapping(key, mode, buffer)
 			end
 		end)
 	end
-	
+
 	return saved
 end
 
 -- Restore a mapping from saved mapping info
-function restore_mapping(saved)
+function RestoreMapping(saved)
 	if not saved or not saved.lhs then
 		return
 	end
-	
+
 	local opts = {
 		silent = saved.silent == 1,
 		noremap = saved.noremap == 1,
 		expr = saved.expr == 1,
 		nowait = saved.nowait == 1,
 	}
-	
+
 	if saved.buffer ~= 0 then
 		opts.buffer = saved.buffer
 	end
-	
+
 	vim.keymap.set(saved.mode, saved.lhs, saved.rhs, opts)
 end
-
--- Prefix used by *all* plugins loaded with vim.pack
--- Ex: `vim.pack.add({ { src = GH ... "user/repo" } })`
-GH = "https://github.com/"
 

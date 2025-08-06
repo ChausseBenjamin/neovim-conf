@@ -13,35 +13,45 @@ vim.pack.add({
 		src = GH .. "nvim-telescope/telescope.nvim",
 		version = vim.version.range('0.1')
 	},
-	{ src = GH .. "ChausseBenjamin/dropship.nvim" }
+})
+DevAdd("ChausseBenjamin/dropship.nvim")
+
+local ts = require('telescope')
+ts.setup({
+  extensions = {
+    dropship = {
+      new_tab_explorer = false,
+      drop_locations = "~/.cache/shortcuts.lua",
+    }
+  }
 })
 
-require('telescope').setup()
+ts.load_extension("dropship")
 
-local ds = require('dropship')
-ds.setup({
-	new_tab_explorer = false, -- Set to true to use `:Exp` on new tabs
-	drop_locations = "~/.cache/shortcuts.lua",
-})
+local function lazy_ds(method)
+  return function()
+    require("telescope").extensions.dropship[method]()
+  end
+end
 
 local ds_keys = {
-	{
-		k = "<leader>dt",
-		f = function() ds.new_tab() end,
-		d = "[D]ropship in a new [T]ab"
-	},
-	{
-		k = "<leader>dc",
-		f = function() ds.current_tab() end,
-		d = "[D]ropship [C]urrent tab",
-	},
-	{
-		k ="<leader>de",
-		f = function() ds.globally() end,
-		d = "[D]ropship [E]verywhere",
-	},
+  {
+    k = "<leader>dt",
+    f = lazy_ds("new_tab"),
+    d = "[D]ropship in a new [T]ab"
+  },
+  {
+    k = "<leader>dc",
+    f = lazy_ds("current_tab"),
+    d = "[D]ropship [C]urrent tab",
+  },
+  {
+    k = "<leader>de",
+    f = lazy_ds("globally"),
+    d = "[D]ropship [E]verywhere",
+  },
 }
 
 for _, map in ipairs(ds_keys) do
-	vim.keymap.set("n", map.k, map.f, { desc = map.d })
+  vim.keymap.set("n", map.k, map.f, { desc = map.d })
 end

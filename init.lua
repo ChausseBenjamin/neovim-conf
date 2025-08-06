@@ -17,6 +17,7 @@
 -- └─ lua
 --    ├─ core
 --    │  ├─ init.lua
+--    │  ├─ lang.lua
 --    │  └─ tools.lua
 --    ├─ plugins
 --    │  ├─ oil.lua

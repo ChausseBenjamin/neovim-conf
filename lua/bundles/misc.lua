@@ -7,3 +7,7 @@
 -- For those plugins that don't fit anywhere else
 
 require('plugins.dadbod')
+require('plugins.macroedit')
+require('plugins.mini')
+require('plugins.speeddating')
+require('plugins.insertdatetime')
