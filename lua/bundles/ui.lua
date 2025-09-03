@@ -19,7 +19,7 @@ vim.o.winborder = "rounded"
 
 -- Setup must come before loading the colorscheme
 require("no-clown-fiesta").setup({
-	transparent = false,
+	transparent = true,
 	styles = {
 		type = { bold = true },
 		lsp = { underline = true },
@@ -44,5 +44,5 @@ vim.api.nvim_set_hl(0, "WinSeparator", { bg = plt.void, fg = plt.gray})
 vim.api.nvim_set_hl(0, "StatusLine", { bg = plt.void, fg = plt.gray})
 
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = plt.red})
+vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = plt.blue})
 vim.fn.matchadd("ColorColumn", "\\%82v", 100)
---
