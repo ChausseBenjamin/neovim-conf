@@ -28,13 +28,18 @@ require("no-clown-fiesta").setup({
 })
 
 local plt = {
+	white = "#f2f1f0",
 	gray = "#727272",
+	yellow = "#BAB382",
 	red = "#84493b",
 	blue = "#374758",
+	dark = "#111a1f",
 	void = "none",
 }
 
 vim.cmd.colorscheme("no-clown-fiesta")
+
+-- Tweaks to the stock colorscheme
 vim.api.nvim_set_hl(0, "@markup.strong", { bold = true })
 vim.api.nvim_set_hl(0, "LineNr", { fg = plt.gray})
 vim.api.nvim_set_hl(0, "Folded", { bg =  plt.void})
@@ -46,3 +51,6 @@ vim.api.nvim_set_hl(0, "StatusLine", { bg = plt.void, fg = plt.gray})
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = plt.red})
 vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = plt.blue})
 vim.fn.matchadd("ColorColumn", "\\%82v", 100)
+
+vim.api.nvim_set_hl(0, "Search", { bg = plt.dark, fg = plt.yellow})
+vim.api.nvim_set_hl(0, "CurSearch", { bg = plt.blue, fg = plt.white})

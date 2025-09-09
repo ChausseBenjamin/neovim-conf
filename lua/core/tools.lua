@@ -24,7 +24,7 @@ end
 
 -- Remove trailing white space on save
 -- Except current line to avoid moving cursor
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
 	pattern = { "*" },
 	callback = function()
 		local save_cursor = vim.fn.getpos(".")
@@ -76,3 +76,7 @@ function RestoreMapping(saved)
 	vim.keymap.set(saved.mode, saved.lhs, saved.rhs, opts)
 end
 
+-- Follow urls in the browser
+vim.keymap.set("n", "gu", function()
+	vim.ui.open(vim.fn.expand("<cfile>"))
+end, { desc = "[G]oto [U]rl" })

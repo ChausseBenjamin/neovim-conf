@@ -18,7 +18,22 @@ vim.pack.add({
 local ts = require('telescope')
 local tsb = require('telescope.builtin')
 
-ts.setup({})
+ts.setup({
+	pickers = {
+		buffers = {
+			mappings = {
+				i = {
+					["<C-x>"] = require('telescope.actions').delete_buffer,
+					["<M-d>"] = false, -- disable the default mapping
+				},
+				n = {
+					["<C-x>"] = require('telescope.actions').delete_buffer,
+					["<M-d>"] = false, -- disable the default mapping
+				}
+			}
+		}
+	}
+})
 
 local ts_keys = {
 	{
@@ -31,7 +46,12 @@ local ts_keys = {
 	{
 		k = "<leader>pb",
 		f = function() tsb.buffers() end,
-		d = "[P]aruse [B]uffers",
+		d = "[P]aruse [b]uffers",
+	},
+	{
+		k = "<leader>pB",
+		f = function() tsb.git_branches() end,
+		d = "[P]aruse [B]ranches",
 	},
 	{
 		k = "<leader>pd",

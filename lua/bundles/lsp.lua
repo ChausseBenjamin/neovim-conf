@@ -18,10 +18,9 @@ vim.lsp.enable({
 	"bashls",
 	"ruff",
 	"texlab",
-	"rust_analyser",
+	"rust_analyzer",
 	"rustowl",
-	"zls",
-	"rust"
+	"zls"
 })
 
 -- Load more stuff now that the lsp is installed
@@ -36,6 +35,16 @@ vim.lsp.config("lua_ls", {
 			workspace = {
 				library = vim.api.nvim_get_runtime_file("", true)
 			}
+		}
+	}
+})
+
+-- Configure rust_analyzer
+vim.lsp.config("rust_analyzer", {
+	cmd = { "rust-analyzer" },
+	settings = {
+		["rust-analyzer"] = {
+			checkOnSave = true
 		}
 	}
 })
