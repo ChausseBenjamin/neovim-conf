@@ -8,24 +8,24 @@
 
 vim.pack.add({
 	{
-		src =  GH .. "saghen/blink.cmp" ,
+		src = GH .. 'saghen/blink.cmp',
 		version = vim.version.range('1')
 	},
-	{ src =  GH .. "rafamadriz/friendly-snippets" },
+	{ src = GH .. 'rafamadriz/friendly-snippets' },
 })
 
 local function setup_blink()
-	local blink = require("blink.cmp")
+	local blink = require('blink.cmp')
 	blink.setup({
 		keymap = {
-			preset = "default"
+			preset = 'default'
 		},
 		appearance = {
 			use_nvim_cmp_as_default = true,
 			nerd_font_variant = 'mono',
 		},
 		sources = {
-			default = {'lsp', 'path', 'snippets', 'buffer'}
+			default = { 'lsp', 'path', 'snippets', 'buffer' }
 		},
 		signature = { enabled = true },
 		snippets = { preset = 'default' }
@@ -33,7 +33,7 @@ local function setup_blink()
 end
 
 -- Setup blink on insert mode or when LSP attaches (faster startup)
-vim.api.nvim_create_autocmd({ "InsertEnter", "LspAttach" }, {
+vim.api.nvim_create_autocmd({ 'InsertEnter', 'LspAttach' }, {
 	once = true,
 	callback = setup_blink,
 })

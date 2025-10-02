@@ -9,6 +9,5 @@
 
 require('plugins.telescope')
 vim.pack.add({
-	{src = GH .. "antonk52/gitignore-grabber.nvim" },
+	{ src = GH .. 'antonk52/gitignore-grabber.nvim' },
 })
-

@@ -38,14 +38,14 @@
 -- * Native LSP is used with the new vim.lsp goodies
 
 -- Nvim Native settings
-require("core")
-require("core.lang")
-require("core.tools")
+require('core')
+require('core.lang')
+require('core.tools')
 
-require("bundles.ui")
-require("bundles.keys")
-require("bundles.lsp")
-require("bundles.git")
-require("bundles.nav")
-require("bundles.misc")
-require("bundles.ai")
+require('bundles.ui')
+require('bundles.keys')
+require('bundles.lsp')
+require('bundles.git')
+require('bundles.nav')
+require('bundles.misc')
+require('bundles.ai')

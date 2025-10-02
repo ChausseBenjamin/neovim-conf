@@ -9,13 +9,13 @@
 
 
 vim.pack.add({
-	{ src = GH .. "lewis6991/gitsigns.nvim" },
-	{ src = GH .. "nvim-treesitter/nvim-treesitter-textobjects" },
+	{ src = GH .. 'lewis6991/gitsigns.nvim' },
+	{ src = GH .. 'nvim-treesitter/nvim-treesitter-textobjects' },
 })
 
-local gs = require("gitsigns")
+local gs = require('gitsigns')
 gs.setup()
-local ts_repeat = require("nvim-treesitter.textobjects.repeatable_move")
+local ts_repeat = require('nvim-treesitter.textobjects.repeatable_move')
 local function navopts()
 	return {
 		wrap = true,
@@ -28,25 +28,25 @@ end
 
 local next_hunk, prev_hunk = ts_repeat.make_repeatable_move_pair(
 	function()
-		gs.nav_hunk("next", navopts())
+		gs.nav_hunk('next', navopts())
 	end,
 	function()
-		gs.nav_hunk("prev", navopts())
+		gs.nav_hunk('prev', navopts())
 	end
 )
 
 vim.keymap.set(
-	{ "n", "x", "o" },
-	"]h",
+	{ 'n', 'x', 'o' },
+	']h',
 	next_hunk,
-	{ desc = "next [H]unk" }
+	{ desc = 'next [H]unk' }
 )
 vim.keymap.set(
-	{ "n", "x", "o" },
-	"[h",
+	{ 'n', 'x', 'o' },
+	'[h',
 	prev_hunk,
-	{ desc = "prev [H]unk" }
+	{ desc = 'prev [H]unk' }
 )
-vim.keymap.set("n", "<leader>gl", function()
-	require("gitsigns").blame_line()
-end, { desc = "Blame current [L]ine" })
+vim.keymap.set('n', '<leader>gl', function()
+	require('gitsigns').blame_line()
+end, { desc = 'Blame current [L]ine' })

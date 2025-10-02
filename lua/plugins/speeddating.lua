@@ -8,5 +8,5 @@
 -- Nah, tomorrow
 
 vim.pack.add({
-	{ src = GH .. "tpope/vim-speeddating" },
+	{ src = GH .. 'tpope/vim-speeddating' },
 })

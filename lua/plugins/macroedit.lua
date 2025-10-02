@@ -7,5 +7,5 @@
 -- To fix the macro-freeze syndrome
 
 vim.pack.add({
-	{ src = GH .. "dohsimpson/vim-macroeditor" },
+	{ src = GH .. 'dohsimpson/vim-macroeditor' },
 })

@@ -7,40 +7,40 @@
 -- Save the date
 
 vim.pack.add({
-	{ src = GH .. "AntonVanAssche/date-time-inserter.nvim" },
+	{ src = GH .. 'AntonVanAssche/date-time-inserter.nvim' },
 })
 
 local date_time_inserter_status_ok, dti =
-pcall(require, "date-time-inserter")
+		pcall(require, 'date-time-inserter')
 if not date_time_inserter_status_ok then
 	return
 end
 
 dti.setup({
-	date_format = "YYYYMMDD",
-	date_separator = "-",
+	date_format = 'YYYYMMDD',
+	date_separator = '-',
 	time_format = 24,
 	show_seconds = false,
 })
 
 local dti_keys = {
 	{
-		k ="<leader>td",
+		k = '<leader>td',
 		f = function() dti.insert_date() end,
-		d = "Insert [T]imestamp [D]ate",
+		d = 'Insert [T]imestamp [D]ate',
 	},
 	{
-		k = "<leader>tt",
+		k = '<leader>tt',
 		f = function() dti.insert_time() end,
-		d = "Insert [T]imestamp [T]ime",
+		d = 'Insert [T]imestamp [T]ime',
 	},
 	{
-		k = "<leader>tf",
+		k = '<leader>tf',
 		f = function() dti.insert_date_time() end,
-		d = "Insert [T]imestamp [F]ull",
+		d = 'Insert [T]imestamp [F]ull',
 	},
 }
 
 for _, map in ipairs(dti_keys) do
-	vim.keymap.set("n",map.k,map.f,{desc = map.d})
+	vim.keymap.set('n', map.k, map.f, { desc = map.d })
 end

@@ -12,26 +12,27 @@ vim.pack.add {
 }
 
 vim.lsp.enable({
-	"gopls",
-	"golangci_lint_ls",
-	"lua_ls",
-	"bashls",
-	"ruff",
-	"texlab",
-	"rust_analyzer",
-	"zls",
-	"graphql"
+	'gopls',
+	'golangci_lint_ls',
+	'lua_ls',
+	'bashls',
+	'ruff',
+	'texlab',
+	'rust_analyzer',
+	'zls',
+	'tinymist',
+	'graphql'
 })
 
 -- Load more stuff now that the lsp is installed
 require('plugins.blink')
 
 -- tweaks to mute lua errors in the Neovim config:
-vim.lsp.config("lua_ls", {
+vim.lsp.config('lua_ls', {
 	settings = {
 		Lua = {
 			workspace = {
-				library = vim.api.nvim_get_runtime_file("", true)
+				library = vim.api.nvim_get_runtime_file('', true)
 			}
 		}
 	}
@@ -39,54 +40,54 @@ vim.lsp.config("lua_ls", {
 
 local lsp_keys = {
 	{
-		k = "<leader>r",
+		k = '<leader>r',
 		f = vim.lsp.buf.rename,
-		d = "Rename object across all occurences"
+		d = 'Rename object across all occurences'
 	},
 	{
-		k = "<leader>fa",
+		k = '<leader>fa',
 		f = vim.lsp.buf.code_action,
-		d = "Run code Action"
+		d = 'Run code Action'
 	},
 	{
-		k = "K",
+		k = 'K',
 		f = vim.lsp.buf.hover,
-		d = "Show object dription on hover",
+		d = 'Show object dription on hover',
 	},
 	{
-		k = "gd",
+		k = 'gd',
 		f = vim.lsp.buf.definition,
-		d = "Go to the location where the object is defined",
+		d = 'Go to the location where the object is defined',
 	},
 	{
-		k = "gt",
+		k = 'gt',
 		f = vim.lsp.buf.type_definition,
-		d = "Go to the definition of the objects type"
+		d = 'Go to the definition of the objects type'
 	},
 	{
-		k = "gi",
+		k = 'gi',
 		f = vim.lsp.buf.implementation,
-		d = "Go to the method implementation"
+		d = 'Go to the method implementation'
 	},
 	{
-		k = "gl",
+		k = 'gl',
 		f = vim.lsp.buf.references,
-		d = "Go to references of the object"
+		d = 'Go to references of the object'
 	},
 	{
-		k = "]d",
+		k = ']d',
 		f = function() vim.diagnostic.jump({ count = 1, float = true }) end,
-		d = "Go to the next diagnostic/issue"
+		d = 'Go to the next diagnostic/issue'
 	},
 	{ -- S is the same as cc, I'd rather use it for something more useful
-		k = "[d",
+		k = '[d',
 		f = function() vim.diagnostic.jump({ count = -1, float = true }) end,
-		d = "Go to the previous diagnostic/issue"
+		d = 'Go to the previous diagnostic/issue'
 	},
 	{
-		k = "S",
+		k = 'S',
 		f = vim.diagnostic.open_float,
-		d = "View diagnostics information in a floating window",
+		d = 'View diagnostics information in a floating window',
 	},
 }
 
@@ -95,7 +96,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(ev)
 		-- Attach LSP keybinds to the current buffer
 		for _, map in ipairs(lsp_keys) do
-			vim.keymap.set("n", map.k, map.f, { desc = map.desc, buffer = ev.buf })
+			vim.keymap.set('n', map.k, map.f, { desc = map.desc, buffer = ev.buf })
 		end
 
 		-- Override gq to use built-in text wrapping instead of formatprg
@@ -105,7 +106,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- Format on save
-vim.api.nvim_create_autocmd("BufWritePre", {
+vim.api.nvim_create_autocmd('BufWritePre', {
 	callback = function()
 		vim.lsp.buf.format({ async = false })
 	end,

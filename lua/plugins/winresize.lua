@@ -8,7 +8,7 @@
 
 
 vim.pack.add({
-	{ src = GH .. "simeji/winresizer" },
+	{ src = GH .. 'simeji/winresizer' },
 })
 
 vim.g.winresizer_vert_resize = 13

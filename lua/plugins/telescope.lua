@@ -8,9 +8,9 @@
 -- Guiding you through a sea of files
 
 vim.pack.add({
-	{ src = GH .. "nvim-lua/plenary.nvim" },
+	{ src = GH .. 'nvim-lua/plenary.nvim' },
 	{
-		src = GH .. "nvim-telescope/telescope.nvim",
+		src = GH .. 'nvim-telescope/telescope.nvim',
 		version = vim.version.range('0.1')
 	}
 })
@@ -23,12 +23,12 @@ ts.setup({
 		buffers = {
 			mappings = {
 				i = {
-					["<C-x>"] = require('telescope.actions').delete_buffer,
-					["<M-d>"] = false, -- disable the default mapping
+					['<C-x>'] = require('telescope.actions').delete_buffer,
+					['<M-d>'] = false, -- disable the default mapping
 				},
 				n = {
-					["<C-x>"] = require('telescope.actions').delete_buffer,
-					["<M-d>"] = false, -- disable the default mapping
+					['<C-x>'] = require('telescope.actions').delete_buffer,
+					['<M-d>'] = false, -- disable the default mapping
 				}
 			}
 		}
@@ -37,62 +37,62 @@ ts.setup({
 
 local ts_keys = {
 	{
-		k = "<leader>pv",
+		k = '<leader>pv',
 		f = function()
 			tsb.find_files()
 		end,
-		d = "[P]aruse [F]iles",
+		d = '[P]aruse [F]iles',
 	},
 	{
-		k = "<leader>pb",
+		k = '<leader>pb',
 		f = function() tsb.buffers() end,
-		d = "[P]aruse [b]uffers",
+		d = '[P]aruse [b]uffers',
 	},
 	{
-		k = "<leader>pB",
+		k = '<leader>pB',
 		f = function() tsb.git_branches() end,
-		d = "[P]aruse [B]ranches",
+		d = '[P]aruse [B]ranches',
 	},
 	{
-		k = "<leader>pd",
+		k = '<leader>pd',
 		f = function() tsb.diagnostics() end,
-		d = "[P]aruse [D]iagnostics",
+		d = '[P]aruse [D]iagnostics',
 	},
 	{
-		k = "<leader>pg",
+		k = '<leader>pg',
 		f = function() tsb.live_grep() end,
-		d = "[P]aruse with [G]rep",
+		d = '[P]aruse with [G]rep',
 	},
 	{
-		k = "<leader>ph",
+		k = '<leader>ph',
 		f = function() tsb.help_tags() end,
-		d = "[P]aruse [H]elp",
+		d = '[P]aruse [H]elp',
 	},
 	{
-		k = "<leader>pw",
+		k = '<leader>pw',
 		f = function()
 			tsb.live_grep({
-				search_dirs = { vim.fn.expand("%:p") }
+				search_dirs = { vim.fn.expand('%:p') }
 			})
 		end,
-		d = "[P]aruse [W]ithin file",
+		d = '[P]aruse [W]ithin file',
 	},
 	{
-		k = "<leader>fq",
+		k = '<leader>fq',
 		f = function()
 			tsb.quickfix()
 		end,
-		d = "[F]ind [Q]uickfix",
+		d = '[F]ind [Q]uickfix',
 	},
 	{
-		k = "<leader>fr",
+		k = '<leader>fr',
 		f = function()
 			tsb.lsp_references()
 		end,
-		d = "[F]ind [R]eferences",
+		d = '[F]ind [R]eferences',
 	},
 	{
-		k = "<C-p>",
+		k = '<C-p>',
 		f = function()
 			if Is_git_repo() then
 				tsb.git_files()
@@ -100,11 +100,11 @@ local ts_keys = {
 				tsb.find_files()
 			end
 		end,
-		d = "[P]aruse Git Files",
+		d = '[P]aruse Git Files',
 	}
 }
 
 -- K.ey M.ap
 for _, map in ipairs(ts_keys) do
-	vim.keymap.set("n", map.k, map.f, { desc = map.d })
+	vim.keymap.set('n', map.k, map.f, { desc = map.d })
 end
