@@ -28,11 +28,10 @@ configs.setup({
 
 		"json",
 		"yaml",
-		"toml"
-	},
-	ignore_install = {
+		"toml",
+		"typescript",
 		"javascript",
-		"typescript"
+		"graphql"
 	},
 	sync_install = false,
 	auto_install = false,
@@ -85,6 +84,13 @@ configs.setup({
 		},
 	},
 })
+
+-- Add predicate for mise file detection
+require("vim.treesitter.query").add_predicate("is-mise?", function(_, _, bufnr, _)
+	local filepath = vim.api.nvim_buf_get_name(tonumber(bufnr) or 0)
+	local filename = vim.fn.fnamemodify(filepath, ":t")
+	return string.match(filename, ".*mise.*%.toml$") ~= nil
+end, { force = true, all = false })
 
 -- Treesitter Text Objects (repeatable moves)
 local tsrm = require("nvim-treesitter.textobjects.repeatable_move")

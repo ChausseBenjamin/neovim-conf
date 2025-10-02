@@ -13,32 +13,4 @@ vim.pack.add({
 
 vim.g.winresizer_vert_resize = 13
 vim.g.winresizer_horiz_resize = 10
-
-vim.keymap.set("n", "<leader><leader>w", function()
-	-- Save current mappings for movement keys
-	local saved_mappings = {
-		h = FreeMapping("h", "n"),
-		j = FreeMapping("j", "n"),
-		k = FreeMapping("k", "n"),
-		l = FreeMapping("l", "n"),
-		K = FreeMapping("K", "n"),
-	}
-
-	-- Start winresize
-	vim.cmd.WinResizerStartResize()
-
-	-- Create autocmd to restore mappings when winresize ends
-	local restore_group = vim.api.nvim_create_augroup("WinresizerRestore", { clear = true })
-	vim.api.nvim_create_autocmd("WinClosed", {
-		group = restore_group,
-		callback = function()
-			-- Restore all saved mappings
-			for _, mapping in pairs(saved_mappings) do
-				RestoreMapping(mapping)
-			end
-			-- Clean up the autocmd group
-			vim.api.nvim_del_augroup_by_id(restore_group)
-		end,
-		once = true,
-	})
-end)
+vim.g.winresizer_start_key = '<leader><leader>w'

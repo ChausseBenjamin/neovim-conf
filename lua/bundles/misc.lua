@@ -6,6 +6,7 @@
 --
 -- For those plugins that don't fit anywhere else
 
+require('plugins.sensible')
 require('plugins.dadbod')
 require('plugins.macroedit')
 require('plugins.mini')

@@ -19,14 +19,12 @@ vim.lsp.enable({
 	"ruff",
 	"texlab",
 	"rust_analyzer",
-	"rustowl",
-	"zls"
+	"zls",
+	"graphql"
 })
 
 -- Load more stuff now that the lsp is installed
 require('plugins.blink')
-require('plugins.rustowl')
-
 
 -- tweaks to mute lua errors in the Neovim config:
 vim.lsp.config("lua_ls", {
@@ -35,16 +33,6 @@ vim.lsp.config("lua_ls", {
 			workspace = {
 				library = vim.api.nvim_get_runtime_file("", true)
 			}
-		}
-	}
-})
-
--- Configure rust_analyzer
-vim.lsp.config("rust_analyzer", {
-	cmd = { "rust-analyzer" },
-	settings = {
-		["rust-analyzer"] = {
-			checkOnSave = true
 		}
 	}
 })
@@ -105,11 +93,30 @@ local lsp_keys = {
 -- Bootstrap shortcuts on LspAttach
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(ev)
-
 		-- Attach LSP keybinds to the current buffer
 		for _, map in ipairs(lsp_keys) do
-			vim.keymap.set("n",map.k,map.f,{desc = map.desc, buffer = ev.buf})
+			vim.keymap.set("n", map.k, map.f, { desc = map.desc, buffer = ev.buf })
 		end
+
+		-- Override gq to use built-in text wrapping instead of formatprg
+		vim.opt_local.formatprg = ''
+		vim.opt_local.formatexpr = ''
+	end
+})
+
+-- Format on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+	callback = function()
+		vim.lsp.buf.format({ async = false })
 	end,
 })
 
+-- Override formatprg for all files to use built-in text wrapping
+vim.api.nvim_create_autocmd('FileType', {
+	pattern = '*',
+	callback = function()
+		vim.opt_local.formatprg = ''
+		vim.opt_local.formatexpr = ''
+		vim.opt_local.textwidth = 80 -- Force textwidth to 80
+	end,
+})

@@ -10,12 +10,17 @@ vim.pack.add({
 	{ src = GH .. "aktersnurra/no-clown-fiesta.nvim" },
 	{ src = GH .. "stevearc/dressing.nvim" },
 	{ src = GH .. "nvim-tree/nvim-web-devicons" },
+	{ src = GH .. "santhosh-tekuri/quickfix.nvim" },
 })
+
 
 -- UI tweaks
 require('plugins.treesitter')
 require('plugins.lualine')
 vim.o.winborder = "rounded"
+
+-- Prettier quickfix list
+vim.o.quickfixtextfunc = require('quickfix').quickfixtextfunc
 
 -- Setup must come before loading the colorscheme
 require("no-clown-fiesta").setup({
@@ -41,16 +46,16 @@ vim.cmd.colorscheme("no-clown-fiesta")
 
 -- Tweaks to the stock colorscheme
 vim.api.nvim_set_hl(0, "@markup.strong", { bold = true })
-vim.api.nvim_set_hl(0, "LineNr", { fg = plt.gray})
-vim.api.nvim_set_hl(0, "Folded", { bg =  plt.void})
-vim.api.nvim_set_hl(0, "Visual", { bg = plt.blue})
-vim.api.nvim_set_hl(0, "VertSplit", { bg = plt.void, fg = plt.gray})
-vim.api.nvim_set_hl(0, "WinSeparator", { bg = plt.void, fg = plt.gray})
-vim.api.nvim_set_hl(0, "StatusLine", { bg = plt.void, fg = plt.gray})
+vim.api.nvim_set_hl(0, "LineNr", { fg = plt.gray })
+vim.api.nvim_set_hl(0, "Folded", { bg = plt.void })
+vim.api.nvim_set_hl(0, "Visual", { bg = plt.blue })
+vim.api.nvim_set_hl(0, "VertSplit", { bg = plt.void, fg = plt.gray })
+vim.api.nvim_set_hl(0, "WinSeparator", { bg = plt.void, fg = plt.gray })
+vim.api.nvim_set_hl(0, "StatusLine", { bg = plt.void, fg = plt.gray })
 
-vim.api.nvim_set_hl(0, "ColorColumn", { bg = plt.red})
-vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = plt.blue})
+vim.api.nvim_set_hl(0, "ColorColumn", { bg = plt.red })
+vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = plt.blue })
 vim.fn.matchadd("ColorColumn", "\\%82v", 100)
 
-vim.api.nvim_set_hl(0, "Search", { bg = plt.dark, fg = plt.yellow})
-vim.api.nvim_set_hl(0, "CurSearch", { bg = plt.blue, fg = plt.white})
+vim.api.nvim_set_hl(0, "Search", { bg = plt.dark, fg = plt.yellow })
+vim.api.nvim_set_hl(0, "CurSearch", { bg = plt.blue, fg = plt.white })

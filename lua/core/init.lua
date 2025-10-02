@@ -19,6 +19,14 @@ vim.opt.splitbelow = true
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 
+vim.o.autoread = true
+
+vim.o.textwidth = 80
+vim.opt.formatoptions:append('c') -- Auto-wrap comments
+vim.opt.formatoptions:append('r') -- Insert comment leader after <Enter>
+vim.opt.formatoptions:append('q') -- Allow formatting comments with gq
+vim.opt.formatoptions:append('j') -- Remove comment leader when joining lines
+
 -- ALWAYS start vim from the root of a git repo {{{
 -- (helps keeping harpoons consistent)
 function Is_git_repo()

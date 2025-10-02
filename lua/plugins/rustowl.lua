@@ -16,13 +16,13 @@ ro.setup({
 	idle_time = 200, -- Time in milliseconds to hover with the cursor before triggering RustOwl
 })
 
--- Configure RustOwl LSP server
-vim.lsp.config('rustowl', {
-	cmd = { 'rustowl', '--stdio' },
-	filetypes = { 'rust' },
-	root_markers = { 'Cargo.toml', 'Cargo.lock', '.git' },
-	single_file_support = false,
-})
+-- Configure RustOwl LSP server (disabled to avoid conflicts)
+-- vim.lsp.config('rustowl', {
+-- 	cmd = { 'rustowl', '--stdio' },
+-- 	filetypes = { 'rust' },
+-- 	root_markers = { 'Cargo.toml', 'Cargo.lock', '.git' },
+-- 	single_file_support = false,
+-- })
 
 -- tweak the colors
 vim.api.nvim_set_hl(0, 'lifetime', { sp = '#90A959', underline = true })     -- green (lifecycle/scope)
@@ -32,13 +32,13 @@ vim.api.nvim_set_hl(0, 'move', { sp = '#88afa2', underline = true })         -- 
 vim.api.nvim_set_hl(0, 'call', { sp = '#F4BF75', underline = true })         -- yellow (function activity)
 vim.api.nvim_set_hl(0, 'outlive', { sp = '#b46958', underline = true })      -- red (constraint/warning)
 
--- Auto-enable RustOwl for Rust files
-vim.api.nvim_create_autocmd('FileType', {
-	pattern = 'rust',
-	callback = function()
-		vim.lsp.enable('rustowl')
-	end,
-})
+-- Auto-enable RustOwl for Rust files (disabled by default to avoid conflicts)
+-- vim.api.nvim_create_autocmd('FileType', {
+-- 	pattern = 'rust',
+-- 	callback = function()
+-- 		vim.lsp.enable('rustowl')
+-- 	end,
+-- })
 
 -- Set up keymaps for RustOwl
 vim.keymap.set(
