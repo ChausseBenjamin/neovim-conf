@@ -52,26 +52,15 @@ local plt = {
 	-- 	fg = '#cdcdcd',
 	-- 	bg = '#141415',
 	-- 	gray = '#606079',
-	-- 	yellow = '#e0a363',
-	-- 	red = '#d8647e',
-	blue = '#405065',
-	-- 	green = '#7fa563',
+	blue   = '#405065',
+	green  = '#80a766',
+	yellow = '#f1bf81',
+	red    = '#d56380',
 	-- 	void = 'none',
 }
 
 -- Custom highlight tweaks to match codebase style
--- vim.api.nvim_set_hl(0, 'Normal', { bg = plt.void })
--- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = plt.void })
--- vim.api.nvim_set_hl(0, 'LineNr', { fg = plt.gray })
--- vim.api.nvim_set_hl(0, 'Folded', { bg = plt.void })
 vim.api.nvim_set_hl(0, 'Visual', { bg = plt.blue })
--- vim.api.nvim_set_hl(0, 'VertSplit', { bg = plt.void, fg = plt.gray })
--- vim.api.nvim_set_hl(0, 'WinSeparator', { bg = plt.void, fg = plt.gray })
--- vim.api.nvim_set_hl(0, 'StatusLine', { bg = plt.void, fg = plt.gray })
---
--- vim.api.nvim_set_hl(0, 'ColorColumn', { bg = plt.red })
--- vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = plt.blue })
--- vim.fn.matchadd('ColorColumn', '\\%82v', 100)
---
--- vim.api.nvim_set_hl(0, 'Search', { bg = plt.blue, fg = plt.yellow })
--- vim.api.nvim_set_hl(0, 'CurSearch', { bg = plt.green, fg = plt.fg })
+vim.api.nvim_set_hl(0, 'lualine_b_diff_added', { bg = plt.green })
+vim.api.nvim_set_hl(0, 'lualine_b_diff_modified', { bg = plt.yellow })
+vim.api.nvim_set_hl(0, 'lualine_b_diff_removed', { bg = plt.red })
