@@ -38,6 +38,100 @@ vim.lsp.config('lua_ls', {
 	}
 })
 
+-- Configure tinymist for PDF export on type
+vim.lsp.config('tinymist', {
+	settings = {
+		exportPdf = "onType",
+		outputPath = "$root/target/$dir/$name",
+		formatterMode = "typstyle",
+	}
+})
+
+-- Custom hover function to show images or LSP hover
+local function custom_hover()
+	-- Check if cursor is on a typst image path using line regex
+	local line = vim.fn.getline('.')
+	local col = vim.fn.col('.')
+	local image_path = nil
+
+	-- Match #image("path") or image("path")
+	local pattern = '#?image%("([^"]+)"'
+	local start, end_pos, path = line:find(pattern)
+	if start and col >= start and col <= end_pos then
+		image_path = path
+	end
+
+	if not image_path then
+		vim.lsp.buf.hover()
+		return
+	end
+
+	-- Resolve path relative to current file
+	local file_dir = vim.fn.expand('%:p:h')
+	local full_path = file_dir .. '/' .. image_path
+	if not vim.fn.filereadable(full_path) then
+		print('not readable, calling hover')
+		vim.lsp.buf.hover()
+		return
+	end
+
+	-- Create floating window popup for the image
+	local api = require('image')
+	local ok, image = pcall(api.from_file, full_path, {})
+	if not ok or not image then
+		vim.lsp.buf.hover()
+		return
+	end
+
+	local utils = require('image/utils')
+	local term_size = utils.term.get_size()
+	local width, height = utils.math.adjust_to_aspect_ratio(
+		term_size,
+		image.image_width,
+		image.image_height,
+		math.floor(term_size.screen_cols / 2),
+		0
+	)
+	local win_config = {
+		relative = "cursor",
+		row = 1,
+		col = 0,
+		width = width,
+		height = height,
+		style = "minimal",
+		border = "rounded",
+	}
+	local buf = vim.api.nvim_create_buf(false, true)
+	vim.bo[buf].filetype = "image_nvim_popup"
+	local win = vim.api.nvim_open_win(buf, false, win_config)
+
+	image.ignore_global_max_size = true
+	image.window = win
+	image.buffer = buf
+
+	vim.defer_fn(function()
+		if vim.api.nvim_win_is_valid(win) then
+			local win_info = vim.fn.getwininfo(win)[1]
+			if win_info and win_info.wincol > 0 then
+				image:render({
+					x = 0,
+					y = 0,
+					width = width,
+					height = height,
+				})
+			end
+		end
+	end, 10)
+
+	vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+		callback = function()
+			if vim.api.nvim_win_is_valid(win) then vim.api.nvim_win_close(win, true) end
+			image:clear()
+		end,
+		once = true,
+	})
+end
+
 local lsp_keys = {
 	{
 		k = '<leader>r',
@@ -51,8 +145,8 @@ local lsp_keys = {
 	},
 	{
 		k = 'K',
-		f = vim.lsp.buf.hover,
-		d = 'Show object dription on hover',
+		f = custom_hover,
+		d = 'Show object description or image on hover',
 	},
 	{
 		k = 'gd',

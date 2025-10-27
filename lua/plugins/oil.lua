@@ -21,6 +21,9 @@ oil.setup({
 	view_options = {
 		show_hidden = true,
 	},
+	preview_win = {
+		preview_method = 'load',
+	},
 })
 
 vim.keymap.set('n', '-', function() oil.open() end,

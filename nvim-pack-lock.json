@@ -1,0 +1,158 @@
+{
+  "plugins": {
+    "CopilotChat.nvim": {
+      "rev": "a7138a0",
+      "src": "https://github.com/CopilotC-Nvim/CopilotChat.nvim"
+    },
+    "blink.cmp": {
+      "rev": "327fff9",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "1.0.0 - 2.0.0"
+    },
+    "copilot.lua": {
+      "rev": "7fe314f",
+      "src": "https://github.com/zbirenbaum/copilot.lua"
+    },
+    "date-time-inserter.nvim": {
+      "rev": "0db5dd1",
+      "src": "https://github.com/AntonVanAssche/date-time-inserter.nvim"
+    },
+    "dressing.nvim": {
+      "rev": "2d7c2db",
+      "src": "https://github.com/stevearc/dressing.nvim"
+    },
+    "fidget.nvim": {
+      "rev": "e32b672",
+      "src": "https://github.com/j-hui/fidget.nvim"
+    },
+    "friendly-snippets": {
+      "rev": "572f566",
+      "src": "https://github.com/rafamadriz/friendly-snippets"
+    },
+    "ghlite.nvim": {
+      "rev": "416a38b",
+      "src": "https://github.com/daliusd/ghlite.nvim"
+    },
+    "gitignore-grabber.nvim": {
+      "rev": "365c1a2",
+      "src": "https://github.com/antonk52/gitignore-grabber.nvim"
+    },
+    "gitsigns.nvim": {
+      "rev": "20ad441",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "harpoon": {
+      "rev": "ed1f853",
+      "src": "https://github.com/theprimeagen/harpoon",
+      "version": "'harpoon2'"
+    },
+    "harpoonEx": {
+      "rev": "2a3f10e",
+      "src": "https://github.com/mike-jl/harpoonEx"
+    },
+    "image.nvim": {
+      "rev": "446a8a5",
+      "src": "https://github.com/3rd/image.nvim"
+    },
+    "lualine.nvim": {
+      "rev": "3946f01",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
+    "markdown-preview.nvim": {
+      "rev": "a923f5f",
+      "src": "https://github.com/iamcco/markdown-preview.nvim"
+    },
+    "melange-nvim": {
+      "rev": "ce42f6b",
+      "src": "https://github.com/savq/melange-nvim"
+    },
+    "mini.nvim": {
+      "rev": "d1a9158",
+      "src": "https://github.com/echasnovski/mini.nvim"
+    },
+    "nvim-lspconfig": {
+      "rev": "a9b2fb5",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-treesitter": {
+      "rev": "42fc28ba",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "nvim-treesitter-textobjects": {
+      "rev": "a9742cb",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+    },
+    "nvim-web-devicons": {
+      "rev": "8dcb311",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "oil.nvim": {
+      "rev": "7e1cd77",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "plenary.nvim": {
+      "rev": "b9fd522",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "quicker.nvim": {
+      "rev": "12a2291",
+      "src": "https://github.com/stevearc/quicker.nvim"
+    },
+    "telescope-ui-select.nvim": {
+      "rev": "6e51d7d",
+      "src": "https://github.com/nvim-telescope/telescope-ui-select.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "a0bbec2",
+      "src": "https://github.com/nvim-telescope/telescope.nvim"
+    },
+    "typst-preview.nvim": {
+      "rev": "285d040",
+      "src": "https://github.com/chomosuke/typst-preview.nvim"
+    },
+    "vague.nvim": {
+      "rev": "5689afd",
+      "src": "https://github.com/vague-theme/vague.nvim"
+    },
+    "vim-dadbod": {
+      "rev": "e95afed",
+      "src": "https://github.com/tpope/vim-dadbod"
+    },
+    "vim-dadbod-completion": {
+      "rev": "a8dac0b",
+      "src": "https://github.com/kristijanhusak/vim-dadbod-completion"
+    },
+    "vim-dadbod-ui": {
+      "rev": "5a83ee1",
+      "src": "https://github.com/kristijanhusak/vim-dadbod-ui"
+    },
+    "vim-fugitive": {
+      "rev": "61b51c0",
+      "src": "https://github.com/tpope/vim-fugitive"
+    },
+    "vim-macroeditor": {
+      "rev": "a38bc7d",
+      "src": "https://github.com/dohsimpson/vim-macroeditor"
+    },
+    "vim-rhubarb": {
+      "rev": "5496d7c",
+      "src": "https://github.com/tpope/vim-rhubarb"
+    },
+    "vim-sensible": {
+      "rev": "0ce2d84",
+      "src": "https://github.com/tpope/vim-sensible"
+    },
+    "vim-speeddating": {
+      "rev": "c17eb01",
+      "src": "https://github.com/tpope/vim-speeddating"
+    },
+    "winresizer": {
+      "rev": "9bd559a",
+      "src": "https://github.com/simeji/winresizer"
+    },
+    "yadm.nvim": {
+      "rev": "8226580",
+      "src": "https://github.com/takinoy/yadm.nvim"
+    }
+  }
+}

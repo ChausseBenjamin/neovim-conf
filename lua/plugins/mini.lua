@@ -14,12 +14,18 @@ vim.pack.add({
 -- plugin parts for which the defaults are ok
 local mini_defaults = {
 	'align',
-	'operators',
 	'surround',
 }
 for _, pkg in ipairs(mini_defaults) do
 	require('mini.' .. pkg).setup()
 end
+
+-- Remap gx to gX to avoid conflict with URL opening
+require('mini.operators').setup({
+	exchange = { prefix = 'gX' },
+	replace  = { prefix = 'gs' }, -- S as in substitute
+	sort     = { prefix = 'gS' }, -- s as in sort
+})
 
 -- Animations and delay were annoying for this one
 local no_indent_anim = require('mini.indentscope').gen_animation.none

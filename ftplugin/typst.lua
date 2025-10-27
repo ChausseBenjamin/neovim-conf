@@ -7,4 +7,12 @@
 --
 -- A worthy successor to LaTeX?
 
+
+vim.pack.add({
+	{ src = GH .. 'chomosuke/typst-preview.nvim' }
+})
+
 require('plugins.images')
+
+require('typst-preview').setup({})
+require('typst-preview.commands').create_commands()
