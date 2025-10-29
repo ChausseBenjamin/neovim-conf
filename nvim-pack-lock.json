@@ -2,53 +2,53 @@
   "plugins": {
     "CopilotChat.nvim": {
       "rev": "a7138a0",
-      "src": "https://github.com/CopilotC-Nvim/CopilotChat.nvim"
+      "src": "git@github.com:CopilotC-Nvim/CopilotChat.nvim"
     },
     "blink.cmp": {
       "rev": "327fff9",
-      "src": "https://github.com/saghen/blink.cmp",
+      "src": "git@github.com:saghen/blink.cmp",
       "version": "1.0.0 - 2.0.0"
     },
     "copilot.lua": {
       "rev": "93adf98",
-      "src": "https://github.com/zbirenbaum/copilot.lua"
+      "src": "git@github.com:zbirenbaum/copilot.lua"
     },
     "date-time-inserter.nvim": {
       "rev": "0db5dd1",
-      "src": "https://github.com/AntonVanAssche/date-time-inserter.nvim"
+      "src": "git@github.com:AntonVanAssche/date-time-inserter.nvim"
     },
     "dressing.nvim": {
       "rev": "2d7c2db",
-      "src": "https://github.com/stevearc/dressing.nvim"
+      "src": "git@github.com:stevearc/dressing.nvim"
     },
     "fidget.nvim": {
       "rev": "e32b672",
-      "src": "https://github.com/j-hui/fidget.nvim"
+      "src": "git@github.com:j-hui/fidget.nvim"
     },
     "friendly-snippets": {
       "rev": "572f566",
-      "src": "https://github.com/rafamadriz/friendly-snippets"
+      "src": "git@github.com:rafamadriz/friendly-snippets"
     },
     "ghlite.nvim": {
       "rev": "416a38b",
-      "src": "https://github.com/daliusd/ghlite.nvim"
+      "src": "git@github.com:daliusd/ghlite.nvim"
     },
     "gitignore-grabber.nvim": {
       "rev": "365c1a2",
-      "src": "https://github.com/antonk52/gitignore-grabber.nvim"
+      "src": "git@github.com:antonk52/gitignore-grabber.nvim"
     },
     "gitsigns.nvim": {
       "rev": "20ad441",
-      "src": "https://github.com/lewis6991/gitsigns.nvim"
+      "src": "git@github.com:lewis6991/gitsigns.nvim"
     },
     "harpoon": {
       "rev": "ed1f853",
-      "src": "https://github.com/theprimeagen/harpoon",
+      "src": "git@github.com:theprimeagen/harpoon",
       "version": "'harpoon2'"
     },
     "harpoonEx": {
       "rev": "2a3f10e",
-      "src": "https://github.com/mike-jl/harpoonEx"
+      "src": "git@github.com:mike-jl/harpoonEx"
     },
     "image.nvim": {
       "rev": "446a8a5",
@@ -56,7 +56,7 @@
     },
     "lualine.nvim": {
       "rev": "3946f01",
-      "src": "https://github.com/nvim-lualine/lualine.nvim"
+      "src": "git@github.com:nvim-lualine/lualine.nvim"
     },
     "markdown-preview.nvim": {
       "rev": "a923f5f",
@@ -68,43 +68,43 @@
     },
     "mini.nvim": {
       "rev": "ee4a4a4",
-      "src": "https://github.com/echasnovski/mini.nvim"
+      "src": "git@github.com:echasnovski/mini.nvim"
     },
     "nvim-lspconfig": {
       "rev": "48a9b4d",
-      "src": "https://github.com/neovim/nvim-lspconfig"
+      "src": "git@github.com:neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
       "rev": "42fc28ba",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+      "src": "git@github.com:nvim-treesitter/nvim-treesitter"
     },
     "nvim-treesitter-textobjects": {
       "rev": "a9742cb",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+      "src": "git@github.com:nvim-treesitter/nvim-treesitter-textobjects"
     },
     "nvim-web-devicons": {
       "rev": "8dcb311",
-      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+      "src": "git@github.com:nvim-tree/nvim-web-devicons"
     },
     "oil.nvim": {
       "rev": "7e1cd77",
-      "src": "https://github.com/stevearc/oil.nvim"
+      "src": "git@github.com:stevearc/oil.nvim"
     },
     "plenary.nvim": {
       "rev": "b9fd522",
-      "src": "https://github.com/nvim-lua/plenary.nvim"
+      "src": "git@github.com:nvim-lua/plenary.nvim"
     },
     "quicker.nvim": {
       "rev": "12a2291",
-      "src": "https://github.com/stevearc/quicker.nvim"
+      "src": "git@github.com:stevearc/quicker.nvim"
     },
     "telescope-ui-select.nvim": {
       "rev": "6e51d7d",
-      "src": "https://github.com/nvim-telescope/telescope-ui-select.nvim"
+      "src": "git@github.com:nvim-telescope/telescope-ui-select.nvim"
     },
     "telescope.nvim": {
       "rev": "a0bbec2",
-      "src": "https://github.com/nvim-telescope/telescope.nvim"
+      "src": "git@github.com:nvim-telescope/telescope.nvim"
     },
     "typst-preview.nvim": {
       "rev": "64469f8",
@@ -112,47 +112,47 @@
     },
     "vague.nvim": {
       "rev": "5689afd",
-      "src": "https://github.com/vague-theme/vague.nvim"
+      "src": "git@github.com:vague-theme/vague.nvim"
     },
     "vim-dadbod": {
       "rev": "e95afed",
-      "src": "https://github.com/tpope/vim-dadbod"
+      "src": "git@github.com:tpope/vim-dadbod"
     },
     "vim-dadbod-completion": {
       "rev": "a8dac0b",
-      "src": "https://github.com/kristijanhusak/vim-dadbod-completion"
+      "src": "git@github.com:kristijanhusak/vim-dadbod-completion"
     },
     "vim-dadbod-ui": {
       "rev": "5a83ee1",
-      "src": "https://github.com/kristijanhusak/vim-dadbod-ui"
+      "src": "git@github.com:kristijanhusak/vim-dadbod-ui"
     },
     "vim-fugitive": {
       "rev": "61b51c0",
-      "src": "https://github.com/tpope/vim-fugitive"
+      "src": "git@github.com:tpope/vim-fugitive"
     },
     "vim-macroeditor": {
       "rev": "a38bc7d",
-      "src": "https://github.com/dohsimpson/vim-macroeditor"
+      "src": "git@github.com:dohsimpson/vim-macroeditor"
     },
     "vim-rhubarb": {
       "rev": "5496d7c",
-      "src": "https://github.com/tpope/vim-rhubarb"
+      "src": "git@github.com:tpope/vim-rhubarb"
     },
     "vim-sensible": {
       "rev": "0ce2d84",
-      "src": "https://github.com/tpope/vim-sensible"
+      "src": "git@github.com:tpope/vim-sensible"
     },
     "vim-speeddating": {
       "rev": "c17eb01",
-      "src": "https://github.com/tpope/vim-speeddating"
+      "src": "git@github.com:tpope/vim-speeddating"
     },
     "winresizer": {
       "rev": "9bd559a",
-      "src": "https://github.com/simeji/winresizer"
+      "src": "git@github.com:simeji/winresizer"
     },
     "yadm.nvim": {
       "rev": "8226580",
-      "src": "https://github.com/takinoy/yadm.nvim"
+      "src": "https://github.com/rj1/yadm.nvim"
     }
   }
 }

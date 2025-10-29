@@ -32,20 +32,13 @@ ts.setup({
 			"└", -- bottom-left
 		},
 		color_devicons = true,
-		path_diwplays = { "smart" },
+		path_displays = { "smart" },
 		layout_config = {
 			height = 100,
 			width = 400,
 			prompt_position = "bottom",
 			preview_cutoff = 40,
 		}
-		-- layout_strategy = "horizontal",
-		-- layout_config = {
-		-- 	horizontal = {
-		-- 		width = 0.95,
-		-- 		height = 0.95,
-		-- 	},
-		-- },
 	},
 	pickers = {
 		buffers = {
@@ -106,18 +99,18 @@ local ts_keys = {
 		d = '[P]aruse [W]ithin file',
 	},
 	{
-		k = '<leader>fq',
+		k = '<leader>pq',
 		f = function()
 			tsb.quickfix()
 		end,
-		d = '[F]ind [Q]uickfix',
+		d = '[P]aruse [Q]uickfix',
 	},
 	{
-		k = '<leader>fr',
+		k = '<leader>pr',
 		f = function()
 			tsb.lsp_references()
 		end,
-		d = '[F]ind [R]eferences',
+		d = '[P]aruse [R]eferences',
 	},
 	{
 		k = '<C-p>',
