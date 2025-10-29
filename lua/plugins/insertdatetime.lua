@@ -17,27 +17,27 @@ if not date_time_inserter_status_ok then
 end
 
 dti.setup({
-	date_format = 'YYYYMMDD',
+	date_format = '%Y-%m-%d',
 	date_separator = '-',
-	time_format = 24,
+	time_format = '%H:%M',
 	show_seconds = false,
 })
 
 local dti_keys = {
 	{
+		d = 'Insert [T]imestamp [D]ate',
 		k = '<leader>td',
 		f = function() dti.insert_date() end,
-		d = 'Insert [T]imestamp [D]ate',
 	},
 	{
+		d = 'Insert [T]imestamp [T]ime',
 		k = '<leader>tt',
 		f = function() dti.insert_time() end,
-		d = 'Insert [T]imestamp [T]ime',
 	},
 	{
+		d = 'Insert [T]imestamp [F]ull',
 		k = '<leader>tf',
 		f = function() dti.insert_date_time() end,
-		d = 'Insert [T]imestamp [F]ull',
 	},
 }
 

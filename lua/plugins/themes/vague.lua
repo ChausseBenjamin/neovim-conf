@@ -49,14 +49,10 @@ require('vague').setup({
 vim.cmd.colorscheme('vague')
 
 local plt = {
-	-- 	fg = '#cdcdcd',
-	-- 	bg = '#141415',
-	-- 	gray = '#606079',
 	blue   = '#405065',
 	green  = '#80a766',
 	yellow = '#f1bf81',
 	red    = '#d56380',
-	-- 	void = 'none',
 }
 
 -- Custom highlight tweaks to match codebase style

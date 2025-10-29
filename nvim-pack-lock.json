@@ -10,7 +10,7 @@
       "version": "1.0.0 - 2.0.0"
     },
     "copilot.lua": {
-      "rev": "7fe314f",
+      "rev": "93adf98",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "date-time-inserter.nvim": {
@@ -67,11 +67,11 @@
       "src": "https://github.com/savq/melange-nvim"
     },
     "mini.nvim": {
-      "rev": "d1a9158",
+      "rev": "ee4a4a4",
       "src": "https://github.com/echasnovski/mini.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "a9b2fb5",
+      "rev": "48a9b4d",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
@@ -107,7 +107,7 @@
       "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
     "typst-preview.nvim": {
-      "rev": "285d040",
+      "rev": "64469f8",
       "src": "https://github.com/chomosuke/typst-preview.nvim"
     },
     "vague.nvim": {
