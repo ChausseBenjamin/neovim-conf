@@ -7,10 +7,10 @@
 --
 -- git like the one true Pope intended
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'tpope/vim-fugitive' },
 	{ src = GH .. 'tpope/vim-rhubarb' },
-})
+}
 
 DevAdd('rj1/yadm.nvim')
 

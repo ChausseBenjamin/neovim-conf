@@ -7,9 +7,9 @@
 --
 -- Warm and fuzzy autumn-like colorscheme
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'savq/melange-nvim' },
-})
+}
 
 vim.cmd.colorscheme('melange')
 vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })

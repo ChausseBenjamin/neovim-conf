@@ -6,8 +6,8 @@
 --
 -- The best document format for note-taking/wikis
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'iamcco/markdown-preview.nvim' }
-})
+}
 
 require('plugins.images')

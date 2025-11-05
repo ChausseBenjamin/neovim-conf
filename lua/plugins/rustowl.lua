@@ -6,9 +6,9 @@
 --
 -- Native rust lifetimes visualisation
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'cordx56/rustowl' },
-})
+}
 
 local ro = require('rustowl')
 ro.setup({

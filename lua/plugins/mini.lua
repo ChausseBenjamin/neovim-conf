@@ -6,10 +6,10 @@
 --
 -- The plugin that's anything but mini
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'nvim-treesitter/nvim-treesitter' },
 	{ src = GH .. 'echasnovski/mini.nvim' },
-})
+}
 
 -- plugin parts for which the defaults are ok
 local mini_defaults = {

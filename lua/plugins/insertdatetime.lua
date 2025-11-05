@@ -6,9 +6,9 @@
 --
 -- Save the date
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'AntonVanAssche/date-time-inserter.nvim' },
-})
+}
 
 local date_time_inserter_status_ok, dti =
 		pcall(require, 'date-time-inserter')

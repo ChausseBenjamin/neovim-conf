@@ -8,6 +8,6 @@
 -- So you don't leak secrets to production
 
 require('plugins.telescope')
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'antonk52/gitignore-grabber.nvim' },
-})
+}

@@ -9,6 +9,7 @@
 
 vim.pack.add {
 	{ src = GH .. 'neovim/nvim-lspconfig' },
+	{ src = GH .. 'mrcjkb/rustaceanvim',  version = 'v6.9.7' },
 }
 
 vim.lsp.enable({
@@ -18,11 +19,28 @@ vim.lsp.enable({
 	'bashls',
 	'ruff',
 	'texlab',
-	'rust_analyzer',
 	'zls',
 	'tinymist',
-	'graphql'
+	'graphql',
+	-- No 'rust_analyzer' as it's handled by rustaceanvim
 })
+
+vim.g.rustaceanvim = {
+	server = {
+		default_settings = {
+			["rust-analyzer"] = {
+				files = {
+					excludeDirs = { "target", "node_modules", ".venv", "venv", ".git" },
+				},
+				cargo = {
+					loadOutDirsFromCheck = false,
+				},
+				watcher = "client",
+			},
+		},
+	},
+}
+
 
 -- Load more stuff now that the lsp is installed
 require('plugins.blink')
@@ -202,7 +220,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- Format on save
 vim.api.nvim_create_autocmd('BufWritePre', {
 	callback = function()
+		local orig_notify = vim.notify
+		---@diagnostic disable-next-line: duplicate-set-field
+		vim.notify = function(_, _) end
 		vim.lsp.buf.format({ async = false })
+		vim.notify = orig_notify
 	end,
 })
 

@@ -6,11 +6,11 @@
 --
 -- GitHub Copilot Integration
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'nvim-lua/plenary.nvim' },
 	{ src = GH .. 'zbirenbaum/copilot.lua' },
 	{ src = GH .. 'CopilotC-Nvim/CopilotChat.nvim' }
-})
+}
 
 require('copilot').setup({})
 

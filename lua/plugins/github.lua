@@ -7,8 +7,8 @@
 --
 -- Manage PRs without leaving nvim
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'daliusd/ghlite.nvim' }
-})
+}
 
 require('ghlite').setup({})

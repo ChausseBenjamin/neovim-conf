@@ -11,9 +11,9 @@
 --
 -- A colorscheme that isn't unicorn puke
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'aktersnurra/no-clown-fiesta.nvim' },
-})
+}
 
 -- Setup must come before loading the colorscheme
 require('no-clown-fiesta').setup({

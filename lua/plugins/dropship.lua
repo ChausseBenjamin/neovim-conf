@@ -7,13 +7,7 @@
 --
 -- Get dropped right back into you projects
 
-vim.pack.add({
-	{ src = GH .. 'nvim-lua/plenary.nvim' },
-	{
-		src = GH .. 'nvim-telescope/telescope.nvim',
-		version = vim.version.range('0.1')
-	},
-})
+require('plugins.telescope')
 DevAdd('ChausseBenjamin/dropship.nvim')
 
 local ts = require('telescope')

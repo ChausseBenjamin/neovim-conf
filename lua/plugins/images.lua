@@ -7,9 +7,9 @@
 --
 -- Let there be cat pictures!
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. '3rd/image.nvim' },
-})
+}
 
 require('image').setup({
 	backend = 'kitty',       -- or 'ueberzug' or 'sixel'

@@ -7,9 +7,9 @@
 --
 -- A cool, dark, low contrast colorscheme
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'vague-theme/vague.nvim' },
-})
+}
 
 require('vague').setup({
 	transparent = true,
