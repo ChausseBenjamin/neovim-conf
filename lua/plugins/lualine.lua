@@ -6,10 +6,10 @@
 --
 -- making the status bar pretty
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'nvim-lualine/lualine.nvim' },
 	{ src = GH .. 'nvim-tree/nvim-web-devicons' },
-})
+}
 
 -- See :help statusline for more information
 local filepath = '%=%m %f'
@@ -37,6 +37,7 @@ require('lualine').setup({
 		globalstatus = true,
 		ignore_focus = {},
 		always_divide_middle = false,
+
 		refresh = {
 			statusline = 20,
 			tabline = 150,
@@ -45,7 +46,7 @@ require('lualine').setup({
 	},
 	sections = {
 		lualine_a = {
-			{
+			{ -- only module that should have dynamic bg colors
 				'mode',
 				fmt = function(str)
 					return modes[str]
@@ -55,8 +56,8 @@ require('lualine').setup({
 		lualine_b = { 'branch' },
 		lualine_c = {},
 		lualine_x = { filepath },
-		lualine_y = { 'filetype' },
-		lualine_z = { 'location' },
+		lualine_y = { { 'filetype', colored = false } },
+		lualine_z = { { 'location', color = 'lualine_b_normal' } },
 	},
 	inactive_sections = {
 		lualine_a = { filepath },
@@ -67,9 +68,9 @@ require('lualine').setup({
 		lualine_z = { 'location' },
 	},
 	tabline = {
-		lualine_a = { 'getcwd' },
-		lualine_b = { 'diff' },
-		lualine_c = { 'orgmode.statusline()' },
+		lualine_a = { { 'getcwd', color = 'lualine_b_normal' } },
+		lualine_b = { { 'diff', } },
+		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {},
 		lualine_z = { 'tabs' },
