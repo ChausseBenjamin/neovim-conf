@@ -18,7 +18,7 @@ local function setup_blink()
 	local blink = require('blink.cmp')
 	blink.setup({
 		keymap = {
-			preset = 'default'
+			preset = 'default',
 		},
 		appearance = {
 			use_nvim_cmp_as_default = true,

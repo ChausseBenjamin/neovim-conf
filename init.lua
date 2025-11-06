@@ -49,3 +49,13 @@ require('bundles.git')
 require('bundles.nav')
 require('bundles.misc')
 require('bundles.ai')
+
+DevAdd('ChausseBenjamin/rafta.nvim')
+local rafta = require('rafta')
+
+rafta.setup({
+	logging = {
+		level = vim.log.levels.DEBUG,
+		path = '',
+	},
+})

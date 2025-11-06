@@ -87,7 +87,12 @@ local ts_keys = {
 	{
 		k = '<leader>ph',
 		f = function() tsb.help_tags() end,
-		d = '[P]aruse [H]elp',
+		d = '[P]aruse [h]elp',
+	},
+	{
+		k = '<leader>pH',
+		f = function() tsb.highlights() end,
+		d = '[P]aruse [H]ighlights',
 	},
 	{
 		k = '<leader>pw',

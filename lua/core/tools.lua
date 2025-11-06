@@ -7,7 +7,7 @@
 -- Miscellaneous goodies
 
 -- Prefix used by *all* plugins loaded with vim.pack
--- Ex: `vim.pack.add({ { src = GH ... 'user/repo' } })`
+-- Ex: `vim.pack.add({ { src = GH .. 'user/repo' } })`
 GH = 'git@github.com:'
 
 -- Utility for my plugin development workflow

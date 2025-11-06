@@ -61,13 +61,13 @@ require('fidget').setup({
 
 	-- Options related to notification subsystem
 	notification = {
-		poll_rate = 10,             -- How frequently to update and render notifications
-		filter = vim.log.levels.INFO, -- Minimum notifications level
-		history_size = 128,         -- Number of removed messages to retain in history
-		override_vim_notify = true, -- Automatically override vim.notify() with Fidget
-		configs =                   -- How to configure notification groups when instantiated
+		poll_rate = 10,              -- How frequently to update and render notifications
+		filter = vim.log.levels.DEBUG, -- Minimum notifications level
+		history_size = 128,          -- Number of removed messages to retain in history
+		override_vim_notify = true,  -- Automatically override vim.notify() with Fidget
+		configs =                    -- How to configure notification groups when instantiated
 		{ default = require("fidget.notification").default_config },
-		redirect =                  -- Conditionally redirect notifications to another backend
+		redirect =                   -- Conditionally redirect notifications to another backend
 				function(msg, level, opts)
 					if opts and opts.on_open then
 						return require("fidget.integration.nvim-notify").delegate(msg, level,
@@ -111,10 +111,10 @@ require('fidget').setup({
 
 	-- Options related to logging
 	logger = {
-		level = vim.log.levels.WARN, -- Minimum logging level
-		max_size = 10000,          -- Maximum log file size, in KB
-		float_precision = 0.01,    -- Limit the number of decimals displayed for floats
-		path =                     -- Where Fidget writes its logs to
+		level = vim.log.levels.DEBUG, -- Minimum logging level
+		max_size = 10000,           -- Maximum log file size, in KB
+		float_precision = 0.01,     -- Limit the number of decimals displayed for floats
+		path =                      -- Where Fidget writes its logs to
 				string.format("%s/fidget.nvim.log", vim.fn.stdpath("cache")),
 	},
 })

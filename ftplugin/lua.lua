@@ -11,18 +11,24 @@
 
 vim.keymap.set('n',
 	'<leader><leader>x',
-	'<cmd>so %<cr>',
-	{ desc = 'Run current lua file', buffer = 0 }
+	'<cmd>update | so %<cr>',
+	{ desc = 'Save and run current lua file', buffer = 0 }
 )
 
 vim.keymap.set('n',
 	'<leader>x',
-	':.lua<cr>',
-	{ desc = 'Run current lua line', buffer = 0 }
+	'<cmd>update | .lua<cr>',
+	{ desc = 'Save and run current lua line', buffer = 0 }
 )
 
 vim.keymap.set({ 'v', 'x' },
 	'<leader>x',
 	':lua<cr>',
 	{ desc = 'Run current lua selection', buffer = 0 }
+)
+
+
+vim.keymap.set('n',
+	'<leader>mT', '<cmd>PlenaryBustedFile %<cr>',
+	{ desc = '[M]ake [T]ests' }
 )
