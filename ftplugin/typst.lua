@@ -8,9 +8,9 @@
 -- A worthy successor to LaTeX?
 
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'chomosuke/typst-preview.nvim' }
-})
+}
 
 require('plugins.images')
 

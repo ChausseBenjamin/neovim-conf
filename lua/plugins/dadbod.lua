@@ -6,8 +6,8 @@
 --
 -- Fetch/Edit databases like a dad
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'tpope/vim-dadbod' },
 	{ src = GH .. 'kristijanhusak/vim-dadbod-ui' },
 	{ src = GH .. 'kristijanhusak/vim-dadbod-completion' },
-})
+}

@@ -6,7 +6,7 @@
 --                        |_|
 -- pick colors!
 
-DevAdd('ChausseBenjamin/termpicker.nvim')
+DevPack('ChausseBenjamin/termpicker.nvim')
 
 local termpicker = require('termpicker')
 termpicker.setup({})

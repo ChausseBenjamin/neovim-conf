@@ -7,9 +7,9 @@
 --
 -- Visual and functional tweaks to the quickfix
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'stevearc/quicker.nvim' },
-})
+}
 
 local quicker = require('quicker')
 

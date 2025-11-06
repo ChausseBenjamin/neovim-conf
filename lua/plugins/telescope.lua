@@ -7,14 +7,14 @@
 --
 -- Guiding you through a sea of files
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'nvim-lua/plenary.nvim' },
 	{
 		src = GH .. 'nvim-telescope/telescope.nvim',
 		version = vim.version.range('0.1')
 	},
 	{ src = GH .. 'nvim-telescope/telescope-ui-select.nvim' },
-})
+}
 
 local ts = require('telescope')
 local tsb = require('telescope.builtin')

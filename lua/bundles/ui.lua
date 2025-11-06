@@ -6,10 +6,10 @@
 --
 -- Making things pretty
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'stevearc/dressing.nvim' },
 	{ src = GH .. 'nvim-tree/nvim-web-devicons' },
-})
+}
 
 
 -- UI tweaks

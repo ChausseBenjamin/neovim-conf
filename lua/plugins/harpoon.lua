@@ -7,9 +7,8 @@
 --
 -- Hook onto files and never let go
 
-vim.pack.add({
-	{ src = GH .. 'nvim-lua/plenary.nvim' },
-	{ src = GH .. 'nvim-telescope/telescope.nvim' },
+require('plugins.telescope')
+vim.pack.add {
 	{
 		src = GH .. 'theprimeagen/harpoon',
 		version = 'harpoon2'
@@ -18,7 +17,7 @@ vim.pack.add({
 		src = GH .. 'mike-jl/harpoonEx',
 		opts = { reload_on_dir_change = true }
 	}
-})
+}
 
 local hp = require('harpoon')
 hp:setup({}) -- Setup FIRST

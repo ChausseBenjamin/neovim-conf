@@ -7,9 +7,9 @@
 -- Resizing splits the correct way
 
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'simeji/winresizer' },
-})
+}
 
 vim.g.winresizer_vert_resize = 13
 vim.g.winresizer_horiz_resize = 10

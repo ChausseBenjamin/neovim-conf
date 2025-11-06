@@ -5,9 +5,9 @@
 --  \___/|_|_|
 --
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'stevearc/oil.nvim' },
-})
+}
 
 local oil = require('oil')
 oil.setup({

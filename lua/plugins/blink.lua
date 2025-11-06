@@ -6,13 +6,13 @@
 --                                      |_|
 -- blink and it's auto-completed
 
-vim.pack.add({
+vim.pack.add {
 	{
 		src = GH .. 'saghen/blink.cmp',
 		version = vim.version.range('1')
 	},
 	{ src = GH .. 'rafamadriz/friendly-snippets' },
-})
+}
 
 local function setup_blink()
 	local blink = require('blink.cmp')

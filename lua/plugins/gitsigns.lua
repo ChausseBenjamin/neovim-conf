@@ -8,10 +8,10 @@
 -- To find someone to blame
 
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'lewis6991/gitsigns.nvim' },
 	{ src = GH .. 'nvim-treesitter/nvim-treesitter-textobjects' },
-})
+}
 
 local gs = require('gitsigns')
 gs.setup()

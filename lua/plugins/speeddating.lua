@@ -7,6 +7,6 @@
 --
 -- Nah, tomorrow
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'tpope/vim-speeddating' },
-})
+}

@@ -6,9 +6,9 @@
 --
 -- Know what your LSP is up to
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'j-hui/fidget.nvim' }
-})
+}
 
 require('fidget').setup({
 	-- Options related to LSP progress subsystem

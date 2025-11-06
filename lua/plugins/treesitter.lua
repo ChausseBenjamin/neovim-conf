@@ -6,10 +6,10 @@
 --
 -- Sweet, sweet AST-based syntax
 
-vim.pack.add({
+vim.pack.add {
 	{ src = GH .. 'nvim-treesitter/nvim-treesitter' },
 	{ src = GH .. 'nvim-treesitter/nvim-treesitter-textobjects' }
-})
+}
 
 -- Base treesitter config
 local configs = require('nvim-treesitter.configs')
