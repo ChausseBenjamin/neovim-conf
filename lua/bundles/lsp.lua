@@ -28,16 +28,45 @@ vim.lsp.enable({
 vim.g.rustaceanvim = {
 	server = {
 		default_settings = {
-			["rust-analyzer"] = {
-				files = {
-					excludeDirs = { "target", "node_modules", ".venv", "venv", ".git" },
+			['rust-analyzer'] = {
+				checkOnSave = false,
+				check = {
+					command = "check",
+					allTargets = false,
+					features = {},
+					noDefaultFeatures = false,
+				},
+				numThreads = tonumber(vim.fn.system('getconf _NPROCESSORS_ONLN')) or 4,
+				cachePriming = {
+					enable = false,
+				},
+				procMacro = {
+					enable = true,
 				},
 				cargo = {
-					loadOutDirsFromCheck = false,
+					buildScripts = {
+						enable = true,
+						rebuildOnSave = true,
+					},
+					targetDir = true,
+					autoreload = true,
 				},
-				watcher = "client",
+				lru = {
+					capacity = 512,
+				},
+				diagnostics = {
+					experimental = {
+						enable = false,
+					},
+				},
+				files = {
+					watcher = "client",
+				},
 			},
 		},
+	},
+	tools = {
+		test_executor = "background",
 	},
 }
 
