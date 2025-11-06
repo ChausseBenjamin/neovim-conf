@@ -1,6 +1,6 @@
 require('plugins.telescope')
 
-DevAdd('ChausseBenjamin/nerdy.nvim')
+DevPack('ChausseBenjamin/nerdy.nvim')
 
 local nerdy = require('nerdy')
 

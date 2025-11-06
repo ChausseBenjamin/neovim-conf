@@ -53,7 +53,7 @@ require('bundles.nav')
 require('bundles.misc')
 require('bundles.ai')
 
-DevAdd('ChausseBenjamin/rafta.nvim')
+DevPack('ChausseBenjamin/rafta.nvim')
 local rafta = require('rafta')
 
 rafta.setup({

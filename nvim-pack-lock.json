@@ -151,6 +151,7 @@
     "winresizer": {
       "rev": "9bd559a",
       "src": "git@github.com:simeji/winresizer"
-    }
+    },
+    "yadm.nvim": []
   }
 }
