@@ -51,7 +51,7 @@
       "version": "'harpoon2'"
     },
     "harpoonEx": {
-      "rev": "2a3f10e",
+      "rev": "01598e5",
       "src": "git@github.com:mike-jl/harpoonEx"
     },
     "image.nvim": {
@@ -67,7 +67,7 @@
       "src": "git@github.com:iamcco/markdown-preview.nvim"
     },
     "mini.nvim": {
-      "rev": "7d6fcfd",
+      "rev": "9101b9e",
       "src": "git@github.com:echasnovski/mini.nvim"
     },
     "nvim-lspconfig": {
@@ -108,7 +108,7 @@
       "src": "git@github.com:nvim-telescope/telescope-ui-select.nvim"
     },
     "telescope.nvim": {
-      "rev": "a0bbec2",
+      "rev": "84b9ba0",
       "src": "git@github.com:nvim-telescope/telescope.nvim",
       "version": "0.1.0 - 0.2.0"
     },
