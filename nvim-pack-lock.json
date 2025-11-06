@@ -109,7 +109,8 @@
     },
     "telescope.nvim": {
       "rev": "a0bbec2",
-      "src": "git@github.com:nvim-telescope/telescope.nvim"
+      "src": "git@github.com:nvim-telescope/telescope.nvim",
+      "version": "0.1.0 - 0.2.0"
     },
     "vague.nvim": {
       "rev": "dba2805",

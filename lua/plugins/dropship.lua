@@ -8,7 +8,7 @@
 -- Get dropped right back into you projects
 
 require('plugins.telescope')
-DevAdd('ChausseBenjamin/dropship.nvim')
+DevPack('ChausseBenjamin/dropship.nvim')
 
 local ts = require('telescope')
 ts.setup({

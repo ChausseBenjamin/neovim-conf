@@ -12,7 +12,7 @@ vim.pack.add {
 	{ src = GH .. 'tpope/vim-rhubarb' },
 }
 
-DevAdd('rj1/yadm.nvim')
+DevPack('rj1/yadm.nvim')
 
 require('yadm').setup({
 	yadm_dir = vim.fn.expand('$XDG_DATA_HOME/yadm/repo.git'),

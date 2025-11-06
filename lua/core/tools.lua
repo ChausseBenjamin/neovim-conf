@@ -10,18 +10,6 @@
 -- Ex: `vim.pack.add({ { src = GH ... 'user/repo' } })`
 GH = 'git@github.com:'
 
--- Utility for my plugin development workflow
-function DevAdd(repo)
-	local name = repo:match('.+/(.+)$')
-	local local_path = vim.fn.expand('~/Workspace/plugins/' .. name)
-
-	if vim.fn.isdirectory(local_path) == 1 then
-		vim.opt.runtimepath:prepend(local_path)
-	else
-		vim.pack.add({ { src = GH .. repo } })
-	end
-end
-
 -- Remove trailing white space on save
 -- Except current line to avoid moving cursor
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {

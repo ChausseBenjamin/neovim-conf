@@ -10,14 +10,15 @@
 -- .
 -- ├─ init.lua
 -- ├─ ftplugin
--- │  ├─ go
--- │  ├─ rust
--- │  ├─ tex
+-- │  ├─ go.lua
+-- │  ├─ rust.lua
+-- │  ├─ lua.lua
 -- │  └─ etc...
 -- └─ lua
 --    ├─ core
 --    │  ├─ init.lua
 --    │  ├─ lang.lua
+--    │  ├─ dev.lua
 --    │  └─ tools.lua
 --    ├─ plugins
 --    │  ├─ oil.lua
@@ -25,7 +26,8 @@
 --    │  └─ etc...
 --    └─ bundles
 --       ├─ nav.lua
---       └─ colors.lua
+--       ├─ colors.lua
+--       └─ etc...
 --
 -- * Each plugin has it's own lua file.
 -- * Ftplugin is in charge of loading filetype specific settings.
@@ -41,6 +43,7 @@
 require('core')
 require('core.lang')
 require('core.tools')
+require('core.dev')
 
 require('bundles.ui')
 require('bundles.keys')
