@@ -59,6 +59,7 @@ local rafta = require('rafta')
 rafta.setup({
 	logging = {
 		level = vim.log.levels.DEBUG,
-		path = '',
+		formatter = require 'rafta.util.log'.formatters.json
+		-- path = '', -- force fallback to vim.notify
 	},
 })
