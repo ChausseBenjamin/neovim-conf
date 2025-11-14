@@ -11,6 +11,4 @@
 -- Not lazy-loaded when entering a repo since
 -- yadm uses bare git repos (harder to detect)
 require('plugins.fugitive')
-require('plugins.gitignore')
 require('plugins.gitsigns')
-

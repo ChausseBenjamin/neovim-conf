@@ -7,7 +7,7 @@ local nerdy = require('nerdy')
 nerdy.setup({
 	max_recents = 30,
 	add_default_keybindings = false,
-	output_location = 'a',
+	output_location = '', -- yank register
 })
 
 

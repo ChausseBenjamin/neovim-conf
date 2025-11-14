@@ -20,7 +20,7 @@ vim.keymap.set(
 vim.keymap.set('n', 'S', '<nop>')
 
 -- quickSave
-vim.keymap.set('n', '<leader><Cr>',
+vim.keymap.set('n', '<C-Space>',
 	function()
 		vim.cmd.update()
 		vim.print('Saved ' .. vim.fn.expand('%'))
@@ -57,9 +57,3 @@ end
 vim.keymap.set('n', '<leader><leader>l', function()
 	vim.cmd.nohlsearch()
 end, { desc = 'Clear search highlights' })
-
-
--- -- Follow urls in the browser
--- vim.keymap.set({ 'n', 'v', 'x' }, 'gx', function()
--- 	vim.ui.open(vim.fn.expand('<cfile>'))
--- end, { desc = 'Follow Url' })
