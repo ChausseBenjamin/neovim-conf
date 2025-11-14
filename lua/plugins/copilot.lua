@@ -17,9 +17,9 @@ require('copilot').setup({})
 local copilot_chat = require('CopilotChat')
 
 copilot_chat.setup({
-	question_header = ' ' .. (vim.fn.getenv('USER') or 'User') .. ': ',
-	answer_header = ' Copilot: ',
-	error_header = ' Error ',
+	question_header = ' ' .. (vim.fn.getenv('USER') or 'User') .. ': ',
+	answer_header = ' Copilot: ',
+	error_header = ' Error ',
 	separator = '-----',
 	model = 'claude-sonnet-4',
 })
