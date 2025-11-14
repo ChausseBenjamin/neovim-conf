@@ -21,7 +21,6 @@ vim.lsp.enable({
 	'texlab',
 	'zls',
 	'tinymist',
-	'graphql',
 	-- No 'rust_analyzer' as it's handled by rustaceanvim
 })
 

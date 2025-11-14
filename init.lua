@@ -53,12 +53,13 @@ require('bundles.nav')
 require('bundles.misc')
 require('bundles.ai')
 
--- DevPack('ChausseBenjamin/rafta.nvim')
--- local rafta = require('rafta')
---
--- rafta.setup({
--- 	logging = {
--- 		level = vim.log.levels.DEBUG,
--- 		-- path = '', -- force use of vim.notify instead of file
--- 	},
--- })
+DevPack('ChausseBenjamin/rafta.nvim')
+local rafta = require('rafta')
+
+rafta.setup({
+	logging = {
+		level = vim.log.levels.DEBUG,
+		formatter = require 'rafta.util.log'.formatters.json
+		-- path = '', -- force fallback to vim.notify
+	},
+})

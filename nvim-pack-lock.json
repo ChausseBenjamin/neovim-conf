@@ -4,6 +4,10 @@
       "rev": "db56110",
       "src": "git@github.com:CopilotC-Nvim/CopilotChat.nvim"
     },
+    "FixCursorHold.nvim": {
+      "rev": "1900f89",
+      "src": "git@github.com:antoinemadec/FixCursorHold.nvim"
+    },
     "blink.cmp": {
       "rev": "327fff9",
       "src": "git@github.com:saghen/blink.cmp",
@@ -66,13 +70,33 @@
       "rev": "a923f5f",
       "src": "git@github.com:iamcco/markdown-preview.nvim"
     },
+    "melange-nvim": {
+      "rev": "ce42f6b",
+      "src": "git@github.com:savq/melange-nvim"
+    },
     "mini.nvim": {
       "rev": "9101b9e",
       "src": "git@github.com:echasnovski/mini.nvim"
     },
+    "monochrome.nvim": {
+      "rev": "2de78d9",
+      "src": "git@github.com:kdheepak/monochrome.nvim"
+    },
+    "neotest": {
+      "rev": "deadfb1",
+      "src": "git@github.com:nvim-neotest/neotest"
+    },
+    "neotest-plenary": {
+      "rev": "3523adc",
+      "src": "git@github.com:nvim-neotest/neotest-plenary"
+    },
     "nvim-lspconfig": {
       "rev": "2010fc6",
       "src": "git@github.com:neovim/nvim-lspconfig"
+    },
+    "nvim-nio": {
+      "rev": "21f5324",
+      "src": "git@github.com:nvim-neotest/nvim-nio"
     },
     "nvim-treesitter": {
       "rev": "42fc28ba",

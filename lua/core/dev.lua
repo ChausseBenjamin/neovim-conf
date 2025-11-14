@@ -1,4 +1,13 @@
-require('core.tools')
+--  ____
+-- |  _ \  ___ _   __
+-- | | | |/ _ \ \ / /
+-- | |_| |  __/\ V /
+-- |____/ \___| \_/
+--
+-- Misc. tools for plugin development
+
+require('core.tools') -- ensures I have `GH` loaded
+vim.pack.add({ { src = GH .. 'nvim-lua/plenary.nvim' } })
 
 -- Utility for my plugin development workflow
 function DevPack(repo)
@@ -12,11 +21,13 @@ function DevPack(repo)
 	end
 end
 
+-- P for Preview
 function P(v)
 	print(vim.inspect(v))
 	return v
 end
 
+-- R for Reload
 function R(name)
 	require('plenary.reload').reload_module(name)
 	return require(name)

@@ -45,7 +45,6 @@ vim.keymap.set(
 local navkeys = {
 	{ '<Bslash>',   function() vim.cmd.tabnext() end,   'View next tab' },
 	{ '<C-\\>',     function() vim.cmd.tabnew() end,    'Create a new tab' },
-	{ '<Tab>',      function() vim.cmd.bnext() end,     'Next buffer' },
 	{ '<S-Tab>',    function() vim.cmd.bprevious() end, 'Previous buffer' },
 	{ '<leader>bd', function() vim.cmd.bdelete() end,   'Delete buffer' },
 }
