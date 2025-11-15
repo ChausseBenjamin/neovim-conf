@@ -7,6 +7,7 @@
 -- What else would you re-write it in?
 
 require('rustaceanvim')
+require('plugins.neotest')
 
 vim.keymap.set('n',
 	'<leader>fa',
@@ -45,10 +46,6 @@ vim.keymap.set(
 )
 
 
--- Run test under the cursor
-vim.keymap.set('n', '<leader>mt', function() vim.cmd('RustTest') end,
-	{ desc = 'Run test under cursor', buffer = 0 })
-
--- Run all tests in the file
+-- Run all tests in the file (useful to see compile errors lol)
 vim.keymap.set('n', '<leader>mT', function() vim.cmd('RustTest!') end,
 	{ desc = 'Run all tests', buffer = 0 })

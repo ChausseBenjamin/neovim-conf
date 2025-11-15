@@ -9,8 +9,8 @@
 
 vim.pack.add {
 	{ src = GH .. 'neovim/nvim-lspconfig' },
-	{ src = GH .. 'mrcjkb/rustaceanvim',  version = 'v6.9.7' },
 }
+DevPack('mrcjkb/rustaceanvim')
 
 vim.lsp.enable({
 	'gopls',
