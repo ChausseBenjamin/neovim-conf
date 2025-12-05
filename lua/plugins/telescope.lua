@@ -22,22 +22,17 @@ local tsb = require('telescope.builtin')
 ts.setup({
 	defaults = {
 		borderchars = {
-			"─", -- top
-			"│", -- right
-			"─", -- bottom
-			"│", -- left
-			"┌", -- top-left
-			"┐", -- top-right
-			"┘", -- bottom-right
-			"└", -- bottom-left
+			prompt = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+			results = { " ", "│", " ", " ", " ", " ", " ", " " },
+			preview = { " " } -- Single line on top to separate from list
 		},
 		color_devicons = true,
 		path_displays = { "smart" },
 		layout_config = {
-			height = 100,
+			height = 400,
 			width = 400,
 			prompt_position = "bottom",
-			preview_cutoff = 40,
+			preview_cutoff = 80,
 		}
 	},
 	pickers = {

@@ -1,7 +1,7 @@
 {
   "plugins": {
     "CopilotChat.nvim": {
-      "rev": "db56110",
+      "rev": "df5376c132382dd47e3e552612940cbf25b3580c",
       "src": "git@github.com:CopilotC-Nvim/CopilotChat.nvim"
     },
     "FixCursorHold.nvim": {
@@ -18,15 +18,15 @@
       "src": "git@github.com:johnsaigle/cargo-expand.nvim"
     },
     "copilot.lua": {
-      "rev": "927053b",
+      "rev": "881f99b827d65b41f522eecc21b112cf518028ac",
       "src": "git@github.com:zbirenbaum/copilot.lua"
     },
     "date-time-inserter.nvim": {
-      "rev": "0db5dd1",
+      "rev": "2d37e1a7aa75f8b4c90cb38248b442f979fe5830",
       "src": "git@github.com:AntonVanAssche/date-time-inserter.nvim"
     },
     "dressing.nvim": {
-      "rev": "2d7c2db",
+      "rev": "2d7c2db2507fa3c4956142ee607431ddb2828639",
       "src": "git@github.com:stevearc/dressing.nvim"
     },
     "fidget.nvim": {
@@ -38,15 +38,19 @@
       "src": "git@github.com:rafamadriz/friendly-snippets"
     },
     "ghlite.nvim": {
-      "rev": "416a38b",
+      "rev": "653f0993241deffb9e69a23f1c73fa4a11991ba1",
       "src": "git@github.com:daliusd/ghlite.nvim"
     },
     "gitignore-grabber.nvim": {
       "rev": "365c1a2",
       "src": "git@github.com:antonk52/gitignore-grabber.nvim"
     },
+    "gitignore.nvim": {
+      "rev": "0344f643768c4d64af4add8c1bdddf6f7d4c9010",
+      "src": "git@github.com:wintermute-cell/gitignore.nvim"
+    },
     "gitsigns.nvim": {
-      "rev": "20ad441",
+      "rev": "5813e4878748805f1518cee7abb50fd7205a3a48",
       "src": "git@github.com:lewis6991/gitsigns.nvim"
     },
     "harpoon": {
@@ -63,7 +67,7 @@
       "src": "git@github.com:3rd/image.nvim"
     },
     "lualine.nvim": {
-      "rev": "3946f01",
+      "rev": "47f91c416daef12db467145e16bed5bbfe00add8",
       "src": "git@github.com:nvim-lualine/lualine.nvim"
     },
     "markdown-preview.nvim": {
@@ -75,7 +79,7 @@
       "src": "git@github.com:savq/melange-nvim"
     },
     "mini.nvim": {
-      "rev": "9101b9e",
+      "rev": "dca98843fab66d080779cd973e7139e258ff164c",
       "src": "git@github.com:echasnovski/mini.nvim"
     },
     "monochrome.nvim": {
@@ -91,7 +95,7 @@
       "src": "git@github.com:nvim-neotest/neotest-plenary"
     },
     "nvim-lspconfig": {
-      "rev": "2010fc6",
+      "rev": "effe4bf2e1afb881ea67291c648b68dd3dfc927a",
       "src": "git@github.com:neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -111,7 +115,7 @@
       "src": "git@github.com:nvim-tree/nvim-web-devicons"
     },
     "oil.nvim": {
-      "rev": "7e1cd77",
+      "rev": "cbcb3f997f6f261c577b943ec94e4ef55108dd95",
       "src": "git@github.com:stevearc/oil.nvim"
     },
     "plenary.nvim": {
@@ -119,13 +123,16 @@
       "src": "git@github.com:nvim-lua/plenary.nvim"
     },
     "quicker.nvim": {
-      "rev": "12a2291",
+      "rev": "9983d4b28881e1df626e3682167b45c284d4da8c",
       "src": "git@github.com:stevearc/quicker.nvim"
     },
     "rustaceanvim": {
-      "rev": "88575b9",
-      "src": "git@github.com:mrcjkb/rustaceanvim",
-      "version": "'v6.9.7'"
+      "rev": "6c3785d6a230bec63f70c98bf8e2842bed924245",
+      "src": "git@github.com:mrcjkb/rustaceanvim"
+    },
+    "techbase.nvim": {
+      "rev": "3c908d83ca18d3b3f3cc108555e718aad10d3131",
+      "src": "git@github.com:mcauley-penney/techbase.nvim"
     },
     "telescope-ui-select.nvim": {
       "rev": "6e51d7d",
@@ -135,6 +142,10 @@
       "rev": "84b9ba0",
       "src": "git@github.com:nvim-telescope/telescope.nvim",
       "version": "0.1.0 - 0.2.0"
+    },
+    "typst-preview.nvim": {
+      "rev": "291972a39db85c5d2e76249748aba4206dfd3bc2",
+      "src": "git@github.com:chomosuke/typst-preview.nvim"
     },
     "vague.nvim": {
       "rev": "dba2805",
@@ -149,7 +160,7 @@
       "src": "git@github.com:kristijanhusak/vim-dadbod-completion"
     },
     "vim-dadbod-ui": {
-      "rev": "236179f",
+      "rev": "48c4f271da13d380592f4907e2d1d5558044e4e5",
       "src": "git@github.com:kristijanhusak/vim-dadbod-ui"
     },
     "vim-fugitive": {
@@ -175,7 +186,6 @@
     "winresizer": {
       "rev": "9bd559a",
       "src": "git@github.com:simeji/winresizer"
-    },
-    "yadm.nvim": []
+    }
   }
 }
