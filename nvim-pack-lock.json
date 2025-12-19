@@ -118,6 +118,10 @@
       "rev": "cbcb3f997f6f261c577b943ec94e4ef55108dd95",
       "src": "git@github.com:stevearc/oil.nvim"
     },
+    "pest.vim": {
+      "rev": "7cfcb43f824e74d13dfe631359fff2ec23836a77",
+      "src": "git@github.com:pest-parser/pest.vim"
+    },
     "plenary.nvim": {
       "rev": "b9fd522",
       "src": "git@github.com:nvim-lua/plenary.nvim"
