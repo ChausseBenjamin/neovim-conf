@@ -1,7 +1,7 @@
 {
   "plugins": {
     "CopilotChat.nvim": {
-      "rev": "9db5d3eaafe9fc3c91ce9ecfc416de2798982487",
+      "rev": "21bdecb25aa72119d11d7fc08c7e0ce323f1b540",
       "src": "git@github.com:CopilotC-Nvim/CopilotChat.nvim"
     },
     "FixCursorHold.nvim": {
@@ -14,7 +14,7 @@
       "version": "1.0.0 - 2.0.0"
     },
     "copilot.lua": {
-      "rev": "e78d1ffebdf6ccb6fd8be4e6898030c1cf5f9b64",
+      "rev": "5ace9ecd0db9a7a6c14064e4ce4ede5b800325f3",
       "src": "git@github.com:zbirenbaum/copilot.lua"
     },
     "date-time-inserter.nvim": {
@@ -34,7 +34,7 @@
       "src": "git@github.com:rafamadriz/friendly-snippets"
     },
     "ghlite.nvim": {
-      "rev": "653f0993241deffb9e69a23f1c73fa4a11991ba1",
+      "rev": "4cda052baaec2330cce1d800ac700de57038a210",
       "src": "git@github.com:daliusd/ghlite.nvim"
     },
     "gitignore-grabber.nvim": {
@@ -42,7 +42,7 @@
       "src": "git@github.com:antonk52/gitignore-grabber.nvim"
     },
     "gitsigns.nvim": {
-      "rev": "6bd29494e3f79ff08be1d35bc1926ed23c22ed9a",
+      "rev": "42d6aed4e94e0f0bbced16bbdcc42f57673bd75e",
       "src": "git@github.com:lewis6991/gitsigns.nvim"
     },
     "harpoon": {
@@ -67,7 +67,7 @@
       "src": "git@github.com:iamcco/markdown-preview.nvim"
     },
     "mini.nvim": {
-      "rev": "02fc1af931cb6e7bb475e4977f530073cfdcc20d",
+      "rev": "8dccba88fc4dce006ca0ad668067c9e0d5ce7702",
       "src": "git@github.com:echasnovski/mini.nvim"
     },
     "mini.test": {
@@ -91,7 +91,7 @@
       "src": "git@github.com:2kabhishek/nerdy.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "0b38bc74487e73489624d61396af7805af9cc75f",
+      "rev": "92ee7d42320edfbb81f3cad851314ab197fa324a",
       "src": "git@github.com:neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -107,7 +107,7 @@
       "src": "git@github.com:nvim-treesitter/nvim-treesitter-textobjects"
     },
     "nvim-web-devicons": {
-      "rev": "6788013bb9cb784e606ada44206b0e755e4323d7",
+      "rev": "803353450c374192393f5387b6a0176d0972b848",
       "src": "git@github.com:nvim-tree/nvim-web-devicons"
     },
     "octavetui.vim": {
@@ -115,7 +115,7 @@
       "src": "git@github.com:NewComer00/octavetui.vim"
     },
     "oil.nvim": {
-      "rev": "81b8a91735ad5cd24a6b3137f14a89f19176364f",
+      "rev": "fbbb2a98721da86f46b06994fd3b4833b04c6e9b",
       "src": "git@github.com:stevearc/oil.nvim"
     },
     "plenary.nvim": {
@@ -123,11 +123,11 @@
       "src": "git@github.com:nvim-lua/plenary.nvim"
     },
     "quicker.nvim": {
-      "rev": "771437c3e3672dba9233156e1c2e2fc1888a5fff",
+      "rev": "fc041830fa7cf093786b0d5990d99cf3c7b0c129",
       "src": "git@github.com:stevearc/quicker.nvim"
     },
     "rustaceanvim": {
-      "rev": "50191da212fb867f8bf25ce5e00f55ffb7a7af8b",
+      "rev": "63c744d92f1d7428bc9acc26054331f85891d822",
       "src": "git@github.com:mrcjkb/rustaceanvim"
     },
     "telescope-ui-select.nvim": {
@@ -148,7 +148,7 @@
       "src": "git@github.com:vague-theme/vague.nvim"
     },
     "vim-dadbod": {
-      "rev": "e95afed23712f969f83b4857a24cf9d59114c2e6",
+      "rev": "6d1d41da4873a445c5605f2005ad2c68c99d8770",
       "src": "git@github.com:tpope/vim-dadbod"
     },
     "vim-dadbod-completion": {

@@ -11,6 +11,25 @@ vim.pack.add {
 	{ src = GH .. 'nvim-treesitter/nvim-treesitter-textobjects' }
 }
 
+-- Add custom parser for Pest
+local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+parser_config.pest = {
+	install_info = {
+		url = "https://github.com/pest-parser/tree-sitter-pest",
+		files = { "src/parser.c" },
+		branch = "main",
+		generate_requires_npm = false,
+	},
+	filetype = "pest",
+}
+
+-- Add filetype detection for .pest files
+vim.filetype.add({
+	extension = {
+		pest = 'pest',
+	},
+})
+
 -- Base treesitter config
 local configs = require('nvim-treesitter.configs')
 configs.setup({
