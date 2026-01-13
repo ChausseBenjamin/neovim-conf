@@ -19,6 +19,8 @@ local digraphs = {
 	{ "[a", 'â', },
 	{ "'a", "à", },
 	{ "]c", 'ç', },
+	{ "[o", 'ô', },
+	{ "'u", 'ù', },
 }
 for _, v in ipairs(digraphs) do
 	vim.cmd.dig(string.format('%s %s',

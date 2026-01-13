@@ -18,10 +18,27 @@ vim.lsp.enable({
 	'lua_ls',
 	'bashls',
 	'ruff',
-	'texlab',
 	'zls',
 	'tinymist',
 	-- No 'rust_analyzer' as it's handled by rustaceanvim
+})
+
+-- Use nvim-lspconfig for texlab to get commands like :TexlabBuild
+require('lspconfig').texlab.setup({
+	settings = {
+		texlab = {
+			build = {
+				executable = 'pdflatex',
+				args = { '-pdf', '-interaction=nonstopmode', '-synctex=1', '%f' },
+				onSave = true, -- Set to true for auto-build on save
+				forwardSearchAfter = false,
+			},
+			chktex = {
+				onOpenAndSave = true, -- Enable linting
+				onEdit = false,
+			},
+		},
+	},
 })
 
 vim.g.rustaceanvim = {
@@ -243,6 +260,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.opt_local.formatprg = ''
 		vim.opt_local.formatexpr = ''
 	end
+})
+
+-- Populate quickfix with diagnostics on LSP notify
+vim.api.nvim_create_autocmd('LspNotify', {
+	callback = function(args)
+		if args.data.method == 'textDocument/publishDiagnostics' then
+			vim.diagnostic.setqflist()
+		end
+	end,
 })
 
 -- Format on save

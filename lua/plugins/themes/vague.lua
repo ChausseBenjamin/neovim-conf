@@ -35,7 +35,6 @@ require('vague').setup({
 		},
 		lsp = {
 			diagnostic_error = 'bold',
-			diagnostic_hint = 'none',
 			diagnostic_info = 'italic',
 			diagnostic_ok = 'none',
 			diagnostic_warn = 'bold',
@@ -49,6 +48,7 @@ require('vague').setup({
 vim.cmd.colorscheme('vague')
 
 local plt = {
+	pale   = '#90a0b5',
 	blue   = '#405065',
 	green  = '#80a766',
 	yellow = '#f1bf81',
@@ -56,6 +56,7 @@ local plt = {
 }
 
 -- Custom highlight tweaks to match codebase style
+vim.api.nvim_set_hl(0, 'Cursor', { fg = plt.pale })
 vim.api.nvim_set_hl(0, 'Visual', { bg = plt.blue })
 vim.api.nvim_set_hl(0, 'lualine_b_diff_added', { bg = plt.green })
 vim.api.nvim_set_hl(0, 'lualine_b_diff_modified', { bg = plt.yellow })

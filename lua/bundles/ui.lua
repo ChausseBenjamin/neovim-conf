@@ -13,10 +13,10 @@ vim.pack.add {
 
 
 -- UI tweaks
-require('plugins.treesitter')
-require('plugins.lualine')
-require('plugins.notifier')
 require('plugins.themes.vague')
+require('plugins.lualine')
+require('plugins.treesitter')
+require('plugins.notifier')
 
 vim.o.winborder = 'rounded'
 vim.o.pumborder = 'rounded'
